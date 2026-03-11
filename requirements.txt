@@ -1,6 +1,6 @@
 rasa==3.6.2
 rasa-sdk==3.6.2
-sqlalchemy<2.0
+sqlalchemy==1.4.52
 pydantic<2.0.0
 fbmessenger
 telegram
