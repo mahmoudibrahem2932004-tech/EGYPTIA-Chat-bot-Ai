@@ -14,4 +14,6 @@ EXPOSE 7860
 EXPOSE 5005
 EXPOSE 5055
 
-CMD ["/bin/bash", "-c", "./start.sh"]
+# Run the start script directly
+ENTRYPOINT []
+CMD ["./start.sh"]
