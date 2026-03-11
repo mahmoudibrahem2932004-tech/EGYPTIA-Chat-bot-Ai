@@ -207,8 +207,7 @@
         const sendButton = document.getElementById('sendButton');
         
         // رابط API بتاع البوت على Hugging Face
-        const RASA_API_URL = 'https://MahmoudEgEG-EGYPTIA-Chat-bot-Ai.hf.space/webhooks/rest/webhook';
-        
+        const RASA_API_URL = 'https://MahmoudEgEG-EGYPTIA-Chat-bot-Ai.hf.space:5005/webhooks/rest/webhook';        
         function formatTime() {
             const now = new Date();
             return now.getHours() + ':' + now.getMinutes().toString().padStart(2, '0');
