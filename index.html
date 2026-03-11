@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EGYPTIA AI Chatbot</title>
+    <title>مساعدك السياحي الذكي في مصر</title>
     <style>
         * {
             margin: 0;
@@ -13,7 +13,7 @@
         }
         
         body {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
             height: 100vh;
             display: flex;
             justify-content: center;
@@ -33,7 +33,7 @@
         }
         
         .chat-header {
-            background: #4a90e2;
+            background: #1e3c72;
             color: white;
             padding: 20px;
             text-align: center;
@@ -47,6 +47,37 @@
         .chat-header p {
             font-size: 0.9rem;
             opacity: 0.9;
+        }
+        
+        .suggestions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            padding: 10px 15px;
+            background: white;
+            border-bottom: 1px solid #eee;
+            justify-content: center;
+        }
+        
+        .suggestion-btn {
+            background: #f0f4f8;
+            border: 1px solid #d0e0f0;
+            border-radius: 20px;
+            padding: 8px 12px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            color: #1e3c72;
+            white-space: nowrap;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .suggestion-btn:hover {
+            background: #1e3c72;
+            color: white;
+            border-color: #1e3c72;
         }
         
         .chat-messages {
@@ -80,7 +111,7 @@
         }
         
         .user-message .message-content {
-            background: #4a90e2;
+            background: #1e3c72;
             color: white;
             border-bottom-right-radius: 5px;
         }
@@ -117,11 +148,11 @@
         }
         
         .chat-input:focus {
-            border-color: #4a90e2;
+            border-color: #1e3c72;
         }
         
         .send-button {
-            background: #4a90e2;
+            background: #1e3c72;
             color: white;
             border: none;
             width: 45px;
@@ -136,7 +167,7 @@
         }
         
         .send-button:hover {
-            background: #357abd;
+            background: #2a5298;
         }
         
         .send-button:disabled {
@@ -178,14 +209,23 @@
 <body>
     <div class="chat-container">
         <div class="chat-header">
-            <h1>🤖 EGYPTIA AI Chatbot</h1>
-            <p>تكلم مع البوت المصري بالعربية</p>
+            <h1>🤖 مساعدك السياحي الذكي في مصر</h1>
+            <p>أسأل عن المعالم، المطاعم، الفنادق، وأي حاجة تخص السياحة في مصر</p>
+        </div>
+        
+        <div class="suggestions" id="suggestions">
+            <button class="suggestion-btn" onclick="useSuggestion('أهم المعالم السياحية في مصر')">🏛️ أهم المعالم السياحية</button>
+            <button class="suggestion-btn" onclick="useSuggestion('أفضل مطاعم في القاهرة')">🍽️ أفضل مطاعم في القاهرة</button>
+            <button class="suggestion-btn" onclick="useSuggestion('فنادق رخيصة في الغردقة')">🏨 فنادق رخيصة في الغردقة</button>
+            <button class="suggestion-btn" onclick="useSuggestion('أنشطة سياحية في الأقصر')">🎯 أنشطة سياحية في الأقصر</button>
+            <button class="suggestion-btn" onclick="useSuggestion('مواصلات من المطار')">🚕 مواصلات من المطار</button>
+            <button class="suggestion-btn" onclick="useSuggestion('أفضل وقت لزيارة مصر')">📅 أفضل وقت للزيارة</button>
         </div>
         
         <div class="chat-messages" id="chatMessages">
             <div class="message bot-message">
                 <div class="message-content">
-                    السلام عليكم! أنا EGYPTIA chatbot. كيف أقدر أساعدك اليوم؟
+                    أهلاً بك في مساعدك السياحي الذكي! أنا هنا عشان أساعدك تكتشف مصر. أسأل عن أي معلم سياحي، مطعم، فندق، أو نشاط.
                 </div>
                 <div class="message-time">الآن</div>
             </div>
@@ -206,11 +246,22 @@
         const messageInput = document.getElementById('messageInput');
         const sendButton = document.getElementById('sendButton');
         
-        // رابط API بتاع البوت على Hugging Face
-        const RASA_API_URL = 'https://MahmoudEgEG-EGYPTIA-Chat-bot-Ai.hf.space:5005/webhooks/rest/webhook';        
+        // رابط API المعدل
+        const RASA_API_URL = 'https://MahmoudEgEG-EGYPTIA-Chat-bot-Ai.hf.space/webhooks/rest/webhook';
+        
         function formatTime() {
             const now = new Date();
             return now.getHours() + ':' + now.getMinutes().toString().padStart(2, '0');
+        }
+        
+        function detectLanguage(text) {
+            const arabicPattern = /[\u0600-\u06FF\u0750-\u077F\u08A0-\u08FF\uFB50-\uFDFF\uFE70-\uFEFF]/;
+            return arabicPattern.test(text) ? 'ar' : 'en';
+        }
+        
+        function useSuggestion(text) {
+            messageInput.value = text;
+            sendMessage();
         }
         
         function addMessage(message, isUser) {
@@ -229,7 +280,6 @@
             messageDiv.appendChild(timeDiv);
             chatMessages.appendChild(messageDiv);
             
-            // Scroll to bottom
             chatMessages.scrollTop = chatMessages.scrollHeight;
         }
         
@@ -258,19 +308,17 @@
             const message = messageInput.value.trim();
             if (!message) return;
             
-            // Disable input while sending
             messageInput.disabled = true;
             sendButton.disabled = true;
             
-            // Add user message
             addMessage(message, true);
             messageInput.value = '';
             
-            // Show typing indicator
             showTypingIndicator();
             
             try {
-                // Send to Rasa API
+                const language = detectLanguage(message);
+                
                 const response = await fetch(RASA_API_URL, {
                     method: 'POST',
                     headers: {
@@ -278,7 +326,10 @@
                     },
                     body: JSON.stringify({
                         sender: 'user',
-                        message: message
+                        message: message,
+                        metadata: {
+                            language: language
+                        }
                     })
                 });
                 
@@ -287,24 +338,26 @@
                 if (response.ok) {
                     const data = await response.json();
                     if (data && data.length > 0) {
-                        // Rasa بترد بـ array من الردود
                         data.forEach(botResponse => {
                             if (botResponse.text) {
                                 addMessage(botResponse.text, false);
                             }
                         });
                     } else {
-                        addMessage('آسف، ما فهمتش. ممكن توضح تاني؟', false);
+                        const errorMsg = language === 'ar' ? 'آسف، ما فهمتش. ممكن توضح تاني؟' : 'Sorry, I didn\'t understand. Can you clarify?';
+                        addMessage(errorMsg, false);
                     }
                 } else {
-                    addMessage('عفواً، حصل خطأ في الاتصال. حاول تاني.', false);
+                    const errorMsg = language === 'ar' ? 'عفواً، حصل خطأ في الاتصال. حاول تاني.' : 'Sorry, connection error. Please try again.';
+                    addMessage(errorMsg, false);
                 }
             } catch (error) {
                 removeTypingIndicator();
-                addMessage('حدث خطأ في الشبكة. تأكد من اتصالك.', false);
+                const language = detectLanguage(message);
+                const errorMsg = language === 'ar' ? 'حدث خطأ في الشبكة. تأكد من اتصالك.' : 'Network error. Check your connection.';
+                addMessage(errorMsg, false);
                 console.error('Error:', error);
             } finally {
-                // Re-enable input
                 messageInput.disabled = false;
                 sendButton.disabled = false;
                 messageInput.focus();
