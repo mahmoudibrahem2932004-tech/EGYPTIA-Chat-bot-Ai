@@ -1,0 +1,284 @@
+version: "3.1"
+
+stories:
+  - story: test greet
+    steps:
+      - user: |
+          مرحبا
+        intent: greet
+      - action: action_detect_language
+      - action: utter_greet
+
+  - story: test goodbye
+    steps:
+      - user: |
+          مع السلامة
+        intent: goodbye
+      - action: action_detect_language
+      - action: utter_goodbye
+
+  - story: test thank you
+    steps:
+      - user: |
+          شكراً
+        intent: thank
+      - action: action_detect_language
+      - action: utter_thank
+
+  - story: test ask name
+    steps:
+      - user: |
+          ما اسمك؟
+        intent: ask_name
+      - action: action_detect_language
+      - action: utter_ask_name
+
+  - story: test ask capabilities
+    steps:
+      - user: |
+          تقدر تعمل ايه
+        intent: ask_capabilities
+      - action: action_detect_language
+      - action: utter_ask_capabilities
+
+  - story: test ask help
+    steps:
+      - user: |
+          محتاج مساعدة
+        intent: ask_help
+      - action: action_detect_language
+      - action: utter_ask_help
+
+  - story: test mood great
+    steps:
+      - user: |
+          تمام
+        intent: mood_great
+      - action: action_detect_language
+      - action: utter_mood_great
+
+  - story: test mood unhappy
+    steps:
+      - user: |
+          زعلان
+        intent: mood_unhappy
+      - action: action_detect_language
+      - action: utter_mood_unhappy
+
+  - story: test affirm
+    steps:
+      - user: |
+          نعم
+        intent: affirm
+      - action: action_detect_language
+      - action: utter_affirm
+
+  - story: test deny
+    steps:
+      - user: |
+          لا
+        intent: deny
+      - action: action_detect_language
+      - action: utter_deny
+
+  - story: test pyramids
+    steps:
+      - user: |
+          الأهرامات
+        intent: ask_pyramids
+      - action: action_detect_language
+      - action: utter_ask_pyramids
+
+  - story: test sphinx
+    steps:
+      - user: |
+          ابو الهول
+        intent: ask_sphinx
+      - action: action_detect_language
+      - action: utter_ask_sphinx
+
+  - story: test karnak
+    steps:
+      - user: |
+          معبد الكرنك
+        intent: ask_karnak
+      - action: action_detect_language
+      - action: utter_ask_karnak
+
+  - story: test luxor temple
+    steps:
+      - user: |
+          معبد الاقصر
+        intent: ask_luxor_temple
+      - action: action_detect_language
+      - action: utter_ask_luxor_temple
+
+  - story: test abu simbel
+    steps:
+      - user: |
+          ابو سمبل
+        intent: ask_abu_simbel
+      - action: action_detect_language
+      - action: utter_ask_abu_simbel
+
+  - story: test hatshepsut
+    steps:
+      - user: |
+          حتشبسوت
+        intent: ask_hatshepsut
+      - action: action_detect_language
+      - action: utter_ask_hatshepsut
+
+  - story: test valley of kings
+    steps:
+      - user: |
+          وادي الملوك
+        intent: ask_valley_of_kings
+      - action: action_detect_language
+      - action: utter_ask_valley_of_kings
+
+  - story: test egyptian museum
+    steps:
+      - user: |
+          المتحف المصري
+        intent: ask_egyptian_museum
+      - action: action_detect_language
+      - action: utter_ask_egyptian_museum
+
+  - story: test grand museum
+    steps:
+      - user: |
+          المتحف الكبير
+        intent: ask_grand_museum
+      - action: action_detect_language
+      - action: utter_ask_grand_museum
+
+  - story: test saqqara
+    steps:
+      - user: |
+          سقارة
+        intent: ask_saqqara
+      - action: action_detect_language
+      - action: utter_ask_saqqara
+
+  - story: test dahshur
+    steps:
+      - user: |
+          دهشور
+        intent: ask_dahshur
+      - action: action_detect_language
+      - action: utter_ask_dahshur
+
+  - story: test al azhar
+    steps:
+      - user: |
+          الجامع الأزهر
+        intent: ask_al_azhar
+      - action: action_detect_language
+      - action: utter_ask_al_azhar
+
+  - story: test amr ibn alaas
+    steps:
+      - user: |
+          جامع عمرو بن العاص
+        intent: ask_amr_ibn_alaas
+      - action: action_detect_language
+      - action: utter_ask_amr_ibn_alaas
+
+  - story: test mohamed ali mosque
+    steps:
+      - user: |
+          مسجد محمد علي
+        intent: ask_mohamed_ali_mosque
+      - action: action_detect_language
+      - action: utter_ask_mohamed_ali_mosque
+
+  - story: test saint catherine
+    steps:
+      - user: |
+          دير سانت كاترين
+        intent: ask_saint_catherine
+      - action: action_detect_language
+      - action: utter_ask_saint_catherine
+
+  - story: test hanging church
+    steps:
+      - user: |
+          الكنيسة المعلقة
+        intent: ask_hanging_church
+      - action: action_detect_language
+      - action: utter_ask_hanging_church
+
+  - story: test sharm el sheikh
+    steps:
+      - user: |
+          شرم الشيخ
+        intent: ask_sharm_el_sheikh
+      - action: action_detect_language
+      - action: utter_ask_sharm_el_sheikh
+
+  - story: test hurghada
+    steps:
+      - user: |
+          الغردقة
+        intent: ask_hurghada
+      - action: action_detect_language
+      - action: utter_ask_hurghada
+
+  - story: test marsa alam
+    steps:
+      - user: |
+          مرسى علم
+        intent: ask_marsa_alam
+      - action: action_detect_language
+      - action: utter_ask_marsa_alam
+
+  - story: test dahab
+    steps:
+      - user: |
+          دهب
+        intent: ask_dahab
+      - action: action_detect_language
+      - action: utter_ask_dahab
+
+  - story: test north coast
+    steps:
+      - user: |
+          الساحل الشمالي
+        intent: ask_north_coast
+      - action: action_detect_language
+      - action: utter_ask_north_coast
+
+  - story: test weather in cairo
+    steps:
+      - user: |
+          الطقس في القاهرة
+        intent: ask_weather
+        entities:
+          - location: القاهرة
+      - action: action_detect_language
+      - action: action_get_weather
+
+  - story: test egyptian food
+    steps:
+      - user: |
+          الأكل المصري
+        intent: ask_egyptian_cuisine
+      - action: action_detect_language
+      - action: utter_ask_egyptian_cuisine
+
+  - story: test out of scope
+    steps:
+      - user: |
+          كيف تصنع بيتزا
+        intent: out_of_scope
+      - action: action_detect_language
+      - action: utter_out_of_scope
+
+  - story: test bot challenge
+    steps:
+      - user: |
+          انت بوت
+        intent: bot_challenge
+      - action: action_detect_language
+      - action: utter_bot_challenge

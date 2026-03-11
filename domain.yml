@@ -1,0 +1,827 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - thank
+  - ask_name
+  - ask_capabilities
+  - ask_help
+  - mood_great
+  - mood_unhappy
+  - affirm
+  - deny
+  - ask_pyramids
+  - ask_sphinx
+  - ask_karnak
+  - ask_luxor_temple
+  - ask_abu_simbel
+  - ask_hatshepsut
+  - ask_valley_of_kings
+  - ask_egyptian_museum
+  - ask_grand_museum
+  - ask_saqqara
+  - ask_dahshur
+  - ask_al_azhar
+  - ask_amr_ibn_alaas
+  - ask_mohamed_ali_mosque
+  - ask_saint_catherine
+  - ask_hanging_church
+  - ask_sultan_hassan_mosque
+  - ask_ibn_tulun_mosque
+  - ask_abu_serga_church
+  - ask_ben_ezra_synagogue
+  - ask_monastery_of_antonios
+  - ask_monastery_of_paula
+  - ask_el_moiz_street
+  - ask_sharm_el_sheikh
+  - ask_hurghada
+  - ask_marsa_alam
+  - ask_dahab
+  - ask_north_coast
+  - ask_el_gouna
+  - ask_taba
+  - ask_nuweiba
+  - ask_ain_sokhna
+  - ask_safari_adventure
+  - ask_white_desert
+  - ask_black_desert
+  - ask_crystal_mountain
+  - ask_wadi_el_hitan
+  - ask_wadi_el_rayan
+  - ask_qaroun_lake
+  - ask_wadi_el_gemal
+  - ask_ras_mohamed
+  - ask_abu_gallum
+  - ask_colored_canyon
+  - ask_nile_cruise
+  - ask_felucca
+  - ask_diving
+  - ask_golf
+  - ask_kite_surfing
+  - ask_horse_riding
+  - ask_camel_riding
+  - ask_medical_tourism
+  - ask_siwa_medical
+  - ask_safaga_medical
+  - ask_helwan_medical
+  - ask_ain_sokhna_medical
+  - ask_weather
+  - ask_hotel_recommendation
+  - ask_restaurant_recommendation
+  - ask_egyptian_cuisine
+  - ask_transportation
+  - ask_flights
+  - ask_trains
+  - ask_buses
+  - ask_tours
+  - ask_best_time_to_visit
+  - ask_visa_requirements
+  - ask_currency
+  - ask_language_info
+  - ask_safety
+  - ask_emergency_numbers
+  - ask_shopping
+  - ask_khan_el_khalili
+  - ask_cost_of_trip
+  - ask_photography_spots
+  - ask_wifi_internet
+  - ask_sim_card
+  - out_of_scope
+  - bot_challenge
+  - inform_location
+
+entities:
+  - location
+
+slots:
+  language:
+    type: text
+    mappings:
+      - type: custom
+    influence_conversation: true
+  
+  location:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: location
+    influence_conversation: true
+
+responses:
+  utter_greet:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "👋 مرحباً بك في EGYPTIA Ai! أنا مساعدك السياحي الذكي. كيف أقدر أساعدك؟"
+    - text: "👋 Welcome to EGYPTIA Ai! I'm your smart tourism assistant. How can I help?"
+
+  utter_goodbye:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "مع السلامة! 👋 نتمنى لك رحلة سعيدة."
+    - text: "Goodbye! 👋 Have a great trip."
+
+  utter_thank:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "العفو! 😊 في خدمتك دائماً."
+    - text: "You're welcome! 😊 Always here."
+
+  utter_ask_name:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "اسمي EGYPTIA Ai 🏛️، مساعدك السياحي الذكي."
+    - text: "My name is EGYPTIA Ai 🏛️, your smart tourism assistant."
+
+  utter_ask_capabilities:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "أقدر أساعدك في: الآثار، الأماكن الدينية، الشواطئ، رحلات السفاري، رحلات النيل، الغوص، الطقس، الفنادق، المطاعم، معلومات عملية عن مصر."
+    - text: "I can help with: monuments, religious sites, beaches, safaris, Nile cruises, diving, weather, hotels, restaurants, practical info about Egypt."
+
+  utter_ask_help:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "أكيد! اسألني عن أي حاجة."
+    - text: "Sure! Ask me anything."
+
+  utter_mood_great:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "دايماً تبسط! 😊 كيف أساعدك؟"
+    - text: "Great! 😊 How can I help?"
+
+  utter_mood_unhappy:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "آسف تسمع كده 😔 ممكن أساعدك في حاجة؟"
+    - text: "Sorry to hear that 😔 Can I help?"
+
+  utter_affirm:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "تم ✓"
+    - text: "Done ✓"
+
+  utter_deny:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "تم الإلغاء"
+    - text: "Cancelled"
+
+  utter_ask_pyramids:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "🏛️ أهرامات الجيزة هي العجيبة الوحيدة الباقية من عجائب الدنيا السبع! بنيت كمقابر لملوك الأسرة الرابعة. تقدر تركب جمال وتشوف عروض الصوت والضوء. الأهرامات هي: هرم خوفو (الأكبر)، هرم خفرع، وهرم منقرع."
+    - text: "🏛️ The Giza Pyramids are the only remaining wonder of the ancient Seven Wonders! Built as tombs for 4th dynasty kings. You can ride camels and see sound and light shows. The pyramids are: Khufu (largest), Khafre, and Menkaure."
+
+  utter_ask_sphinx:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "🦁 تمثال أبو الهول منحوت من صخرة واحدة، جسم أسد ورأس إنسان، ويقع بجوار الأهرامات. طوله 73 متر وارتفاعه 20 متر. بيعتقد أنه تم بناؤه في عهد الملك خفرع."
+    - text: "🦁 The Sphinx is carved from one rock, lion body with human head, next to the pyramids. It's 73 meters long and 20 meters high. Believed to be built during Pharaoh Khafre's reign."
+
+  utter_ask_karnak:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "🏛️ معبد الكرنك أكبر مجمع ديني قديم في العالم، مساحته 100 فدان! فيه 134 عمود ضخم في قاعة الأعمدة، ارتفاع العمود 23 متر. استغرق بناؤه أكثر من 1500 سنة."
+    - text: "🏛️ Karnak Temple is the largest ancient religious complex, covering 100 acres! It has 134 massive columns in the Hypostyle Hall, each 23 meters high. Construction took over 1500 years."
+
+  utter_ask_luxor_temple:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "🌙 معبد الأقصر أجمل معبد في الليل، بناه رمسيس الثاني وأمنحتب الثالث. بيضي بالليل ويبقى منظر خرافي. بتربطه بمعبد الكرنك طريق الكباش."
+    - text: "🌙 Luxor Temple is most beautiful at night, built by Ramses II and Amenhotep III. It's illuminated at night and connected to Karnak Temple by the Avenue of Sphinxes."
+
+  utter_ask_abu_simbel:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "🏔️ معبد أبو سمبل نحته رمسيس الثاني في الجبل، وبيحصل فيه تعامد الشمس مرتين في السنة (22 فبراير و22 أكتوبر) عيد ميلاده ويوم تتويجه. تم نقل المعبد بالكامل في الستينات لإنقاذه من الغرق!"
+    - text: "🏔️ Abu Simbel temple carved by Ramses II in the mountain, sun aligns twice yearly (Feb 22 & Oct 22) on his birthday and coronation. The entire temple was moved in the 1960s to save it from flooding!"
+
+  utter_ask_hatshepsut:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "👑 معبد حتشبسوت تصميمه فريد على 3 مدرجات في جبل الدير البحري، للملكة حتشبسوت أشهر ملكة فرعونية. كانت بتلبس اللحية الفرعونية عشان تثبت شرعيتها كفرعون!"
+    - text: "👑 Hatshepsut Temple has unique 3-terrace design at Deir el-Bahari, for Egypt's most famous female pharaoh. She wore the false royal beard to legitimize her rule!"
+
+  utter_ask_valley_of_kings:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "⚰️ وادي الملوك فيه 65 مقبرة لملوك مصر القديمة، أشهرها مقبرة توت عنخ آمون اللي اكتشفها هوارد كارتر سنة 1922. المقابر كانت بتتزين بمناظر من كتاب الموتى."
+    - text: "⚰️ Valley of Kings has 65 tombs of ancient Egyptian kings, most famous is Tutankhamun's discovered by Howard Carter in 1922. Tombs decorated with scenes from the Book of the Dead."
+
+  utter_ask_egyptian_museum:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "🏺 المتحف المصري في التحرير فيه 120 ألف قطعة أثرية، أهمها كنوز توت عنخ آمون (أكثر من 5000 قطعة) والمومياوات الملكية. اتفتح سنة 1902."
+    - text: "🏺 Egyptian Museum in Tahrir has 120,000 artifacts, most importantly Tutankhamun's treasures (over 5000 pieces) and royal mummies. Opened in 1902."
+
+  utter_ask_grand_museum:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "🏛️ المتحف المصري الكبير أكبر متحف للآثار بالعالم، جنب الأهرامات، فيه كنوز توت عنخ آمون كاملة لأول مرة. مساحته 500 ألف متر مربع وتكلفته مليار دولار!"
+    - text: "🏛️ Grand Egyptian Museum is world's largest archaeological museum, near pyramids, with complete Tutankhamun collection for first time. Area 500,000 sq meters, cost $1 billion!"
+
+  utter_ask_saqqara:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "🔺 سقارة فيها هرم زوسر المدرج، أقدم هرم حجري في التاريخ (عام 2700 ق.م). صممه المهندس إيمحتب، وكان في الأصل 6 مدرجات ارتفاعها 62 متر."
+    - text: "🔺 Saqqara has Step Pyramid of Djoser, oldest stone pyramid in history (2700 BC). Designed by architect Imhotep, originally 6 steps, 62 meters high."
+
+  utter_ask_dahshur:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "🔻 دهشور فيها الهرم المنحني والهرم الأحمر لبني سنفرو. الهرم المنحني هو الوحيد اللي بيحتفظ بكسوته الأصلية، والهرم الأحمر أول هرم حقيقي كامل."
+    - text: "🔻 Dahshur has Bent Pyramid and Red Pyramid built by Sneferu. Bent Pyramid is the only one retaining original casing, Red Pyramid is first true smooth-sided pyramid."
+
+  utter_ask_al_azhar:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "🕌 الجامع الأزهر منارة الإسلام، اتأسس سنة 970 م في العصر الفاطمي، وأقدم جامعة في العالم. بيعتبر أهم مركز للدراسات الإسلامية."
+    - text: "🕌 Al-Azhar Mosque is lighthouse of Islam, founded in 970 AD during Fatimid era, oldest university in the world. It's the most important center for Islamic studies."
+
+  utter_ask_amr_ibn_alaas:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "🕌 جامع عمرو بن العاص أول مسجد في مصر وإفريقيا، اتبنى سنة 642 م بعد فتح مصر. كان بسيط جداً، مساحته 30×30 متر، اتعمل من جريد النخيل والطين."
+    - text: "🕌 Amr Ibn Al-Aas Mosque is first mosque in Egypt and Africa, built in 642 AD after the conquest. It was very simple, 30×30 meters, made of palm trunks and mud."
+
+  utter_ask_mohamed_ali_mosque:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "🕌 مسجد محمد علي (جامع المرمر) في قلعة صلاح الدين، بناه محمد علي باشا على الطراز العثماني (1830-1848). شكله يشبه جامع السلطان أحمد في اسطنبول، وبيعتبر أشهر معالم القاهرة."
+    - text: "🕌 Muhammad Ali Mosque (Alabaster Mosque) in Saladin Citadel, built by Muhammad Ali Pasha in Ottoman style (1830-1848). Looks like Sultan Ahmed Mosque in Istanbul, most famous Cairo landmark."
+
+  utter_ask_saint_catherine:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "⛪ دير سانت كاترين أقدم دير مسيحي عامل في العالم (من القرن السادس)، في سيناء عند جبل موسى. فيه مكتبة المخطوطات التانية في العالم بعد الفاتيكان، وفيه البئر اللي شربت منه موسى."
+    - text: "⛪ St. Catherine's Monastery is oldest working Christian monastery (6th century), in Sinai at Mount Moses. Has world's second largest manuscript library after Vatican, and the well where Moses drank."
+
+  utter_ask_hanging_church:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "⛪ الكنيسة المعلقة في مصر القديمة، مبنية فوق بوابة حصن بابليون (القرن الثالث). اسمها كده لأنها معلقة فوق البرجين. أقدم كنيسة في مصر واتبنيت على شكل سفينة نوح."
+    - text: "⛪ Hanging Church in Old Cairo, built above Babylon Fortress gate (3rd century). Called hanging because suspended above two towers. Oldest church in Egypt, built in Noah's Ark shape."
+
+  utter_ask_sultan_hassan_mosque:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "🕌 مسجد السلطان حسن تحفة معمارية مملوكية في القاهرة (1363). بيعتبر من أروع المساجد في العالم الإسلامي، ضخم جداً وبوابته ارتفاعها 26 متر!"
+    - text: "🕌 Sultan Hassan Mosque is a Mamluk architectural masterpiece in Cairo (1363). Considered one of the most magnificent mosques in the Islamic world, massive with 26-meter high entrance!"
+
+  utter_ask_ibn_tulun_mosque:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "🕌 مسجد ابن طولون أقدم مساجد مصر المحفوظة بحالته الأصلية (879 م). بناه أحمد بن طولون، وبتتميز مئذنته بدرج حلزوني من بره زي مئذنة سامراء في العراق."
+    - text: "🕌 Ibn Tulun Mosque is the oldest mosque in Egypt preserved in its original state (879 AD). Built by Ahmad Ibn Tulun, its minaret has an external spiral staircase like Samarra minaret in Iraq."
+
+  utter_ask_abu_serga_church:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "⛪ كنيسة أبو سرجة في مصر القديمة (القرن الخامس)، بُنيت فوق مغارة العائلة المقدسة اللي استخبت فيها العيلة المقدسة وقت رحلتهم لمصر. من أقدس الأماكن المسيحية."
+    - text: "⛪ Abu Serga Church in Old Cairo (5th century), built above the Holy Family cave where they took shelter during their flight to Egypt. One of the holiest Christian sites."
+
+  utter_ask_ben_ezra_synagogue:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "🕍 معبد بن عزرا في مصر القديمة (القرن التاسع)، من أقدم المعابد اليهودية. مكانه كان كنيسة قبل كده، اتحول لمعبد بعدين. اكتشفوا فيه وثائق جنيزة القاهرة الشهيرة."
+    - text: "🕍 Ben Ezra Synagogue in Old Cairo (9th century), one of the oldest Jewish temples. It was previously a church, later converted to synagogue. Famous Cairo Geniza documents were found here."
+
+  utter_ask_monastery_of_antonios:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "⛪ دير الأنبا أنطونيوس أقدم دير في العالم (القرن الرابع)، في البحر الأحمر. أسسه القديس أنطونيوس أبو الرهبان. لسه فيه رهبان عايشين فيه لغاية دلوقتي."
+    - text: "⛪ Monastery of Saint Anthony is the oldest monastery in the world (4th century), in Red Sea. Founded by St. Anthony the Great, father of monasticism. Still inhabited by monks today."
+
+  utter_ask_monastery_of_paula:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "⛪ دير الأنبا بولا أول متوحد مسيحي، قريب من دير الأنبا أنطونيوس (القرن الرابع). أسسه القديس بولا أول الناسك، ويعتبر تاني أقدم دير في العالم."
+    - text: "⛪ Monastery of Saint Paul, near St. Anthony's monastery (4th century). Founded by St. Paul the Hermit, first Christian hermit. Second oldest monastery in the world."
+
+  utter_ask_el_moiz_street:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "🏛️ شارع المعز لدين الله متحف مفتوح للعمارة الإسلامية (القرن العاشر). فيه آثار من العصور الفاطمية، الأيوبية، المملوكية والعثمانية. بطوله 1 كيلو متر."
+    - text: "🏛️ Al-Muizz Street is an open museum of Islamic architecture (10th century). Has monuments from Fatimid, Ayyubid, Mamluk, and Ottoman eras. Length 1 kilometer."
+
+  utter_ask_sharm_el_sheikh:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "🏖️ شرم الشيخ مدينة سياحية عالمية على البحر الأحمر، مشهورة بالغوص والشعاب المرجانية. فيها محمية رأس محمد (من أفضل مواقع الغوص)، وخليج نعمة، جزيرة تيران وصنافير."
+    - text: "🏖️ Sharm El Sheikh is world-class Red Sea resort, famous for diving and coral reefs. Has Ras Mohamed reserve (top diving site), Naama Bay, Tiran and Sanafir islands."
+
+  utter_ask_hurghada:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "🏖️ الغردقة أهم مدن السياحة الشاطئية، فيها منتجعات فاخرة وأنشطة مائية. أشهر مناطقها: السقالة، الجونة، سهل حشيش، مكادي باي. فيها جزر الجفتون والأرصفة."
+    - text: "🏖️ Hurghada is major beach resort, with luxury hotels and water activities. Famous areas: Sakkala, El Gouna, Sahl Hasheesh, Makadi Bay. Has Giftun islands and aquarium."
+
+  utter_ask_marsa_alam:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "🏖️ مرسى علم مشهورة بالشعاب المرجانية البكر، وتقدر تشوف السلاحف والدلافين. فيها دولفين هاوس (بيت الدلافين)، وادي الجمال، أبو دباب. من أجمل مواقع الغوص."
+    - text: "🏖️ Marsa Alam is famous for pristine reefs, you can see turtles and dolphins. Has Dolphin House, Wadi El Gemal, Abu Dabbab. One of the most beautiful diving spots."
+
+  utter_ask_dahab:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "🏖️ دهب مدينة شبابية في سيناء، مشهورة بالغوص الرخيص والركش. فيها بلو هول (أخطر موقع غوص بالعالم)، الوادي الملون، المشاية (مكان التنزه). بتتميز بالكمبينات والبدو."
+    - text: "🏖️ Dahab is youthful Sinai town, famous for cheap diving and kite surfing. Has Blue Hole (world's most dangerous dive site), Colored Canyon, Masbat promenade. Known for camps and Bedouin culture."
+
+  utter_ask_north_coast:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "🏖️ الساحل الشمالي على البحر المتوسط، مصيف المصريين الأول. أشهر منتجعاته: مارينا، العلمين، سيدي عبد الرحمن، مراسي، حاجز. بتتميز بالرمال البيضا والمية الفيروزية."
+    - text: "🏖️ North Coast on Mediterranean, Egyptians' top summer destination. Famous resorts: Marina, Alamein, Sidi Abdel Rahman, Marassi, Hacienca. Known for white sand and turquoise water."
+
+  utter_ask_el_gouna:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "🏖️ الجونة مدينة متكاملة على البحر الأحمر (على بعد 20 كم من الغردقة)، مشهورة بجزرها وقنواتها المائية. فيها 24 جزيرة، مطار خاص، ملاعب جولف، ومهرجان الجونة السينمائي."
+    - text: "🏖️ El Gouna is an integrated town on the Red Sea (20 km from Hurghada), famous for its islands and lagoons. Has 24 islands, private airport, golf courses, and El Gouna Film Festival."
+
+  utter_ask_taba:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "🏖️ طابا في سيناء، على حدود إسرائيل والأردن، فيها منتجعات فخمة ومناظر طبيعية خلابة. أشهر فنادقها: طابا هايتس، موفنبيك طابا. قريبة من جزيرة فرعون."
+    - text: "🏖️ Taba in Sinai, on the border with Israel and Jordan, with luxury resorts and stunning views. Famous hotels: Taba Heights, Mövenpick Taba. Close to Pharaoh's Island."
+
+  utter_ask_nuweiba:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "🏖️ نويبع في سيناء، مشهورة بالكمبينات والهدوء. فيها محمية أبو جالوم، الوادي الملون. بتتميز بالشواطئ الرملية الواسعة وأجواء البدو. مكان مثالي للهروب من الزحمة."
+    - text: "🏖️ Nuweiba in Sinai, famous for camps and tranquility. Has Abu Gallum reserve, Colored Canyon. Known for wide sandy beaches and Bedouin atmosphere. Perfect escape from crowds."
+
+  utter_ask_ain_sokhna:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "🏖️ العين السخنة على خليج السويس، قريبة من القاهرة (120 كم)، فيها عيون كبريتية ساخنة للاستشفاء. منتجعاتها بتطل على البحر مباشرة. مكان مفضل للرحلات اليومية من القاهرة."
+    - text: "🏖️ Ain Sokhna on Gulf of Suez, close to Cairo (120 km), with hot sulfur springs for therapy. Resorts directly on the sea. Popular for day trips from Cairo."
+
+  utter_ask_safari_adventure:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "🐪 مصر فيها سفاري في صحراء الأهرامات، سيناء، الصحراء البيضاء، وسيوة. بتقدر تركب الجمال، عربيات 4×4، كواد، وتتخيم تحت النجوم. تجربة المغامرة الحقيقية!"
+    - text: "🐪 Egypt has safaris in Pyramids desert, Sinai, White Desert, and Siwa. You can ride camels, 4x4 vehicles, quads, and camp under stars. The real adventure experience!"
+
+  utter_ask_white_desert:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "⛰️ الصحراء البيضاء محمية طبيعية (على بعد 500 كم من القاهرة)، فيها تشكيلات طباشيرية بيضاء فريدة شكلتها الرياح عبر آلاف السنين. المنظر في الليل تحت النجوم لا يُصدق!"
+    - text: "⛰️ White Desert is nature reserve (500 km from Cairo), with unique white chalk formations shaped by wind over thousands of years. The view at night under stars is incredible!"
+
+  utter_ask_black_desert:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "⛰️ الصحراء السوداء في الواحات (جنوب الصحراء البيضاء)، فيها جبال بركانية سوداء مغطاة بطبقة من الحمم البركانية. اسمها كده لأن سطحها لونه أسود من صخور البازلت."
+    - text: "⛰️ Black Desert in the oases (south of White Desert), with black volcanic mountains covered with lava rock layer. Called black due to basalt rocks covering the surface."
+
+  utter_ask_crystal_mountain:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "💎 جبل الكريستال في الصحراء البيضاء، مليء بالكريستال والكوارتز. الجبل كله عبارة عن بلورات كريستال طبيعي بتلمع في الشمس. مكان رائع لعشاق الجيولوجيا والتصوير."
+    - text: "💎 Crystal Mountain in White Desert, full of crystal and quartz. The whole mountain is natural crystal formations sparkling in the sun. Great for geology lovers and photography."
+
+  utter_ask_wadi_el_hitan:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "🐋 وادي الحيتان في الفيوم (موقع تراث عالمي)، فيه حفريات حيتان عمرها 40 مليون سنة، بتثبت نظرية تطور الحيتان من كائنات برية لكائنات بحرية. فيه هيكل عظمي كامل لحوت."
+    - text: "🐋 Wadi Al-Hitan (Whale Valley) in Fayoum (UNESCO World Heritage), has 40-million-year-old whale fossils, proving whale evolution from land to sea creatures. Has complete whale skeleton."
+
+  utter_ask_wadi_el_rayan:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "💧 وادي الريان في الفيوم (60 كم من المدينة)، فيه شلالات وبحيرات (البحيرة العليا والسفلى). الشلالات الوحيدة في مصر، وبتعتبر محمية طبيعية للطيور المهاجرة."
+    - text: "💧 Wadi Al-Rayan in Fayoum (60 km from city), with waterfalls and lakes (upper and lower). The only waterfalls in Egypt, protected area for migratory birds."
+
+  utter_ask_qaroun_lake:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "🌊 بحيرة قارون في الفيوم (80 كم من القاهرة)، من أقدم البحيرات الطبيعية في العالم (بقايا بحيرة موريس القديمة). طولها 40 كم، فيها أنواع نادرة من الأسماك والطيور."
+    - text: "🌊 Lake Qaroun in Fayoum (80 km from Cairo), one of the oldest natural lakes (remnant of ancient Lake Moeris). Length 40 km, has rare fish and bird species."
+
+  utter_ask_wadi_el_gemal:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "🏞️ وادي الجمال محمية في مرسى علم (40 كم جنوب المدينة)، فيها جبال، وديان، وشعاب مرجانية. اسمها معناه وادي الجمال، وبتتميز بمناظرها الخلابة وتنوعها البيئي."
+    - text: "🏞️ Wadi El-Gemal reserve in Marsa Alam (40 km south), with mountains, valleys, and coral reefs. Name means Valley of Camels, known for stunning landscapes and biodiversity."
+
+  utter_ask_ras_mohamed:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "🐠 رأس محمد محمية طبيعية في شرم الشيخ، من أفضل مواقع الغوص في العالم. فيها شعاب مرجانية نادرة، أسماك ملونة، وجزيرتي تيران وصنافير. مكان غوص لا يُفوّت."
+    - text: "🐠 Ras Mohamed nature reserve in Sharm El Sheikh, top diving site worldwide. Has rare coral reefs, colorful fish, Tiran and Sanafir islands. Unmissable diving spot."
+
+  utter_ask_abu_gallum:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "🏞️ أبو جالوم محمية في نويبع (15 كم شمال المدينة)، فيها شعاب مرجانية ووديان. بتتميز بأنها منطقة غوص من الشاطئ مباشرة، وفيها عيون مياه عذبة في البحر!"
+    - text: "🏞️ Abu Gallum reserve in Nuweiba (15 km north), with coral reefs and valleys. Known for shore diving, and freshwater springs underwater in the sea!"
+
+  utter_ask_colored_canyon:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "🎨 الوادي الملون في سيناء (قرب نويبع)، بتكوينات صخرية ملونة بالصخور الحمراء والوردية والصفراء والبنفسجية. عمقه 40 متر، منظر طبيعي خلاب."
+    - text: "🎨 Colored Canyon in Sinai (near Nuweiba), with colorful rock formations in red, pink, yellow, and purple. Depth 40 meters, stunning natural scenery."
+
+  utter_ask_nile_cruise:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "🚢 رحلات النيل بين الأقصر وأسوان تجربة فريدة، بتشوف فيها كل المعابد على ضفاف النيل (الكرنك، الأقصر، إدفو، كوم أمبو). المدة بتكون 3-7 أيام، وعادةً بتضم بالون طائر وبازارات."
+    - text: "🚢 Nile cruises between Luxor and Aswan are unique, you see all temples on Nile banks (Karnak, Luxor, Edfu, Kom Ombo). Duration 3-7 days, usually includes hot air balloon and markets."
+
+  utter_ask_felucca:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "⛵ الفلوكة مركب شراعي تقليدي، تقدر تركبها في النيل وقت الغروب. رحلة هادئة لمدة ساعة أو ساعتين، أشهرها في أسوان بين جزيرة النباتات وجزيرة اللورد كتشنر."
+    - text: "⛵ Felucca is traditional sailboat, you can ride on Nile at sunset. Peaceful 1-2 hour trip, famous in Aswan between Elephantine and Kitchener islands."
+
+  utter_ask_diving:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "🤿 الغوص في مصر من أفضل المواقع في العالم، خاصة في البحر الأحمر. أشهر مواقع الغوص: رأس محمد (شرم)، الجفتون (الغردقة)، بلو هول (دهب)، دولفين هاوس (مرسى علم). مية صافية وشعاب نادرة."
+    - text: "🤿 Diving in Egypt is world-class, especially in Red Sea. Famous dive sites: Ras Mohamed (Sharm), Giftun (Hurghada), Blue Hole (Dahab), Dolphin House (Marsa Alam). Clear water and rare reefs."
+
+  utter_ask_golf:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "⛳ مصر فيها ملاعب جولف عالمية في القاهرة (كاتدراكت، دريم لاند)، الجونة، الساحل الشمالي، شرم الشيخ. معظم الملاعب 18 حفرة وإطلالات رائعة."
+    - text: "⛳ Egypt has world-class golf courses in Cairo (Katameya Dunes, Dreamland), El Gouna, North Coast, Sharm. Mostly 18-hole courses with amazing views."
+
+  utter_ask_kite_surfing:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "🪁 الركش في مصر مشهور في دهب والجونة. الرياح ممتازة طول السنة، وفيه مدارس لتعليم المبتدئين. دهب فيها (السبوت) والجونة فيها بحيرة مخصصة للركش."
+    - text: "🪁 Kite surfing in Egypt is famous in Dahab and El Gouna. Great wind all year, with schools for beginners. Dahab has The Spot, El Gouna has a dedicated kite lagoon."
+
+  utter_ask_horse_riding:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "🐎 ركوب الخيل متاح في الأهرامات (ركوب مع الأهرامات في الخلفية)، الجونة، شرم الشيخ، الأقصر. فيه رحلات شروق وغروب المنظر فيها رائع."
+    - text: "🐎 Horse riding available at Pyramids (ride with pyramids background), El Gouna, Sharm, Luxor. Sunrise and sunset rides have amazing views."
+
+  utter_ask_camel_riding:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "🐫 ركوب الجمال تجربة ممتعة في الأهرامات وسيناء. تقدر تركب لمدة ساعة وتتصور مع الأهرامات أو في الصحراء. تجربة مصرية أصيلة."
+    - text: "🐫 Camel riding is fun at Pyramids and Sinai. You can ride for an hour and take photos with pyramids or in desert. Authentic Egyptian experience."
+
+  utter_ask_medical_tourism:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "🏥 السياحة العلاجية في مصر مشهورة، زي الدفن في الرمال بسيوة (علاج الروماتيزم)، والرمال السوداء بسفاجا (علاج الصدفية)، والعيون الكبريتية في حلوان والعين السخنة."
+    - text: "🏥 Medical tourism in Egypt is famous, like sand burial in Siwa (rheumatism treatment), black sand in Safaga (psoriasis treatment), sulfur springs in Helwan and Ain Sokhna."
+
+  utter_ask_siwa_medical:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "🏜️ سيوة مشهورة بالدفن في الرمال الساخنة (الدفن الصحراوي) لعلاج الروماتيزم وأمراض المفاصل. كمان فيها عيون كبريتية (عين كليوباترا). موسم العلاج في الصيف."
+    - text: "🏜️ Siwa is famous for hot sand burial (desert sand therapy) for rheumatism and joint diseases. Also has sulfur springs (Cleopatra's Spring). Treatment season in summer."
+
+  utter_ask_safaga_medical:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "🏖️ سفاجا مشهورة بالرمال السوداء المشعة طبيعياً لعلاج الصدفية والأمراض الجلدية. فيه منتجعات متخصصة للعلاج. الرمال عندها قدرة على امتصاص السموم."
+    - text: "🏖️ Safaga is famous for naturally radioactive black sand for psoriasis and skin diseases treatment. Has specialized treatment resorts. Sand has ability to absorb toxins."
+
+  utter_ask_helwan_medical:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "💧 حلوان مشهورة بالعيون الكبريتية المعدنية الساخنة لعلاج الأمراض الجلدية والروماتيزم (من أيام الفراعنة والرومان). فيها حمامات كبريت وحمامات فرعون."
+    - text: "💧 Helwan is famous for hot sulfur mineral springs for skin diseases and rheumatism (since Pharaohs and Romans). Has sulfur baths and Pharaonic baths."
+
+  utter_ask_ain_sokhna_medical:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "💧 العين السخنة فيها عيون كبريتية ساخنة للاستشفاء (درجة حرارة المياه 70 درجة مئوية). مفيدة لعلاج الروماتيزم والأمراض الجلدية. المنتجعات فيها مسابح بالكبريت."
+    - text: "💧 Ain Sokhna has hot sulfur springs for therapy (water temperature 70°C). Beneficial for rheumatism and skin diseases. Resorts have sulfur pools."
+
+  utter_ask_weather:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "🌡️ من فضلك أخبرني اسم المدينة (مثال: القاهرة، شرم الشيخ، الغردقة)"
+    - text: "🌡️ Please tell me the city name (e.g., Cairo, Sharm El Sheikh, Hurghada)"
+
+  utter_ask_hotel_recommendation:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "🏨 في أي مدينة تبحث عن فنادق؟ (مثال: القاهرة، شرم الشيخ، الغردقة)"
+    - text: "🏨 In which city are you looking for hotels? (e.g., Cairo, Sharm El Sheikh, Hurghada)"
+
+  utter_ask_restaurant_recommendation:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "🍽️ في أي مدينة تبحث عن مطاعم؟ (مثال: القاهرة، الإسكندرية، الأقصر)"
+    - text: "🍽️ In which city are you looking for restaurants? (e.g., Cairo, Alexandria, Luxor)"
+
+  utter_ask_egyptian_cuisine:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "🍲 الأكل المصري لذيذ ومتنوع! أشهر الأكلات: \n- الكشري (أكلة شعبية مشهورة)\n- الفول والطعمية (الفطور المصري)\n- المحشي (كرومب، ورق عنب، كوسا)\n- الفتة (باللحمة والخل والثوم)\n- الكباب والكفتة (مشويات)\n- الملوخية بالأرانب أو الفراخ\n- البامية\n- الصيادية (سمك)"
+    - text: "🍲 Egyptian food is delicious and diverse! Famous dishes: \n- Koshari (famous street food)\n- Ful and Taameya (Egyptian breakfast)\n- Mahshi (stuffed veggies)\n- Fatta (with meat, garlic, vinegar)\n- Kebab and Kofta (grilled)\n- Molokhia (with rabbit or chicken)\n- Okra\n- Sayadeya (fish)"
+
+  utter_ask_transportation:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "🚗 وسائل النقل في مصر:\n✈️ طيران داخلي: مصر للطيران، النيل للطيران (بين القاهرة، الأقصر، أسوان، شرم، الغردقة)\n🚂 قطارات: فيها قطار النوم (Watania) بين القاهرة والأقصر وأسوان\n🚌 أتوبيسات: Go Bus، Super Jet (لتشغيل بين المحافظات)\n🚕 أوبر وكريم (في المدن الكبيرة)"
+    - text: "🚗 Transport in Egypt:\n✈️ Domestic flights: EgyptAir, Nile Air (between Cairo, Luxor, Aswan, Sharm, Hurghada)\n🚂 Trains: Sleeping train (Watania) Cairo-Luxor-Aswan\n🚌 Buses: Go Bus, Super Jet (intercity)\n🚕 Uber and Careem (in major cities)"
+
+  utter_ask_flights:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "✈️ مصر للطيران بتشغل رحلات داخلية يومية بين القاهرة، الأقصر، أسوان، شرم الشيخ، الغردقة، مرسى علم. مدة الرحلة: القاهرة-الأقصر ساعة، القاهرة-شرم 45 دقيقة."
+    - text: "✈️ EgyptAir operates daily domestic flights between Cairo, Luxor, Aswan, Sharm, Hurghada, Marsa Alam. Flight time: Cairo-Luxor 1 hour, Cairo-Sharm 45 minutes."
+
+  utter_ask_trains:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "🚂 قطار النوم (Watania) بيشتغل بين القاهرة والأقصر وأسوان. بيغادر القاهرة 8 مساءً ويوصل الأقصر 6 صباحاً. فيه عربات نوم ومطعم. ممكن تحجز أونلاين."
+    - text: "🚂 Sleeping train (Watania) operates between Cairo, Luxor, and Aswan. Departs Cairo 8 PM, arrives Luxor 6 AM. Has sleeper cabins and restaurant. Can book online."
+
+  utter_ask_buses:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "🚌 أشهر شركات الأتوبيسات: Go Bus (الأوسع انتشاراً) و Super Jet. بتغطي كل المحافظات. رايحة من القاهرة لكل المدن السياحية. تقدر تحجز من موقعهم أو التطبيق."
+    - text: "🚌 Most famous bus companies: Go Bus (most widespread) and Super Jet. Cover all governorates. From Cairo to all tourist cities. Can book on their website or app."
+
+  utter_ask_tours:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "🗺️ فيه جولات سياحية في كل المدن:\n- القاهرة: جولة الأهرامات والمتحف\n- الأقصر: جولة وادي الملوك والكرنك\n- أسوان: جولة معابد فيلة وأبو سمبل\n- الغردقة: رحلات الغوص والجزر\nتحب جولة معينة؟"
+    - text: "🗺️ Organized tours available in all cities:\n- Cairo: Pyramids and Museum tour\n- Luxor: Valley of Kings and Karnak tour\n- Aswan: Philae and Abu Simbel tour\n- Hurghada: Diving and island trips\nInterested in a specific tour?"
+
+  utter_ask_best_time_to_visit:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "📅 أفضل وقت لزيارة مصر من أكتوبر لأبريل (الشتاء والربيع). الجو معتدل ومثالي للسياحة. الصيف (مايو-سبتمبر) حار جداً خصوصاً في الأقصر وأسوان."
+    - text: "📅 Best time to visit Egypt is October to April (winter and spring). Weather mild and perfect for tourism. Summer (May-September) very hot especially in Luxor and Aswan."
+
+  utter_ask_visa_requirements:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "🛂 معظم الجنسيات تحتاج تأشيرة سياحة (25 دولار) متوفرة عند الوصول في المطار. فيزا إلكترونية (e-Visa) متوفرة أونلاين قبل السفر. جواز السفر يجب أن يكون ساري لمدة 6 أشهر على الأقل."
+    - text: "🛂 Most nationalities need tourist visa ($25) available on arrival at airport. e-Visa available online before travel. Passport must be valid for at least 6 months."
+
+  utter_ask_currency:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "💵 العملة المصرية: الجنيه المصري (EGP). الدولار = 50 جنيه تقريباً (السعر متغير). الفيزا والماستر كارد مقبولة في الفنادق والمطاعم الكبيرة. فيه صرافة في كل مكان."
+    - text: "💵 Egyptian currency: Egyptian Pound (EGP). 1 USD ≈ 50 EGP (rate varies). Visa and Mastercard accepted in hotels and big restaurants. Exchange offices everywhere."
+
+  utter_ask_language_info:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "🗣️ اللغة الرسمية عربي. الإنجليزية منتشرة في المناطق السياحية (الفنادق، المطاعم، المطارات). كلمات مفيدة: شكراً، من فضلك، السلام عليكم."
+    - text: "🗣️ Official language Arabic. English common in tourist areas (hotels, restaurants, airports). Useful words: Shukran (Thanks), Min Fadlik (Please), Salam Alaikum (Hello)."
+
+  utter_ask_safety:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "🛡️ مصر آمنة للسياحة، خاصة في المناطق السياحية. فيه شرطة سياحة متخصصة. خلي بالك من ممتلكاتك في الأماكن المزدحمة. اتبع تعليمات السلطات المحلية."
+    - text: "🛡️ Egypt is safe for tourism, especially in tourist areas. There's specialized tourist police. Keep your belongings safe in crowded places. Follow local authorities' instructions."
+
+  utter_ask_emergency_numbers:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "🚨 أرقام الطوارئ في مصر:\n🚓 شرطة: 122\n🚑 إسعاف: 123\n🔥 مطافي: 180\n🛂 شرطة سياحة: 126\n📱 خدمة طوارئ موحدة: 112"
+    - text: "🚨 Emergency numbers in Egypt:\n🚓 Police: 122\n🚑 Ambulance: 123\n🔥 Fire: 180\n🛂 Tourist Police: 126\n📱 Unified emergency: 112"
+
+  utter_ask_shopping:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "🛍️ أشهر أماكن التسوق في مصر:\n- خان الخليلي (هدايا تذكارية، نحاس، فضة)\n- مول مصر (أكبر مول في مصر)\n- سيتي ستارز\n- مول 360 (التجمع الخامس)\n- سوق الأحد (أسوان)\nممكن تشتري: بردى، كتان، تماثيل فرعونية، كارتية، بهارات."
+    - text: "🛍️ Famous shopping places in Egypt:\n- Khan El Khalili (souvenirs, copper, silver)\n- Mall of Egypt (largest mall)\n- City Stars\n- 360 Mall (New Cairo)\n- Sunday Market (Aswan)\nYou can buy: Papyrus, cotton, pharaonic statues, spices."
+
+  utter_ask_khan_el_khalili:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "🏺 خان الخليلي أشهر سوق تقليدي في القاهرة (من القرن 14). فيه مشغولات نحاسية، فضة، هدايا تذكارية، كارتية، بهارات. مشهور بمقاهيه القديمة (الفيشاوي). مكان رائع للتسوق والتصوير."
+    - text: "🏺 Khan El Khalili is Cairo's most famous traditional market (14th century). Has copperware, silver, souvenirs, spices. Famous for old cafes (El Fishawy). Great for shopping and photos."
+
+  utter_ask_cost_of_trip:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "💰 تكلفة الرحلة لمصر حسب ميزانيتك (لليوم للشخص):\n🟢 اقتصادي (25-50 دولار): إقامة بسيطة، أكل محلي، مواصلات عامة\n🟡 متوسط (75-150 دولار): فنادق 3-4 نجوم، مطاعم، جولات منظمة\n🔴 فاخر (250-600 دولار): فنادق 5 نجوم فاخرة، رحلات خاصة\nالتذكرة والإقامة حسب الموسم."
+    - text: "💰 Egypt trip cost per day per person by budget:\n🟢 Budget ($25-50): simple stay, local food, public transport\n🟡 Mid-range ($75-150): 3-4 star hotels, restaurants, organized tours\n🔴 Luxury ($250-600): 5-star luxury hotels, private tours\nFlight and stay vary by season."
+
+  utter_ask_photography_spots:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "📸 أفضل أماكن التصوير في مصر:\n- الأهرامات عند الغروب\n- معبد الكرنك (قاعة الأعمدة)\n- معبد أبو سمبل (الصبح)\n- جبل موسى (الشروق)\n- الواحات (الصحراء البيضاء)\n- خان الخليلي (الليل)\n- مركب في النيل (الغروب)\n- شرم الشيخ تحت الماء"
+    - text: "📸 Best photo spots in Egypt:\n- Pyramids at sunset\n- Karnak Temple (Hypostyle Hall)\n- Abu Simbel (morning)\n- Mount Moses (sunrise)\n- White Desert (oases)\n- Khan El Khalili (night)\n- Nile boat (sunset)\n- Underwater in Sharm"
+
+  utter_ask_wifi_internet:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "📶 الواي فاي متوفر في معظم الفنادق والمقاهي (مجاني). تقدر تشتري شريحة بيانات (We, Vodafone, Orange, Etisalat) من المطار أو فروعهم. فيبر المنازل متوفر في المدن الكبيرة."
+    - text: "📶 WiFi available in most hotels and cafes (free). You can buy data SIM (We, Vodafone, Orange, Etisalat) at airport or their branches. Fiber optic available in major cities."
+
+  utter_ask_sim_card:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "📱 تقدر تشتري شريحة اتصال من المطار بعد وصولك:\n- فودافون: 250 جنيه (50 جيجا)\n- أورانج: 230 جنيه (40 جيجا)\n- اتصالات: 220 جنيه (40 جيجا)\n- WE: 240 جنيه (45 جيجا)\nمحتاج بس جواز سفرك."
+    - text: "📱 You can buy SIM card at airport on arrival:\n- Vodafone: 250 EGP (50 GB)\n- Orange: 230 EGP (40 GB)\n- Etisalat: 220 EGP (40 GB)\n- WE: 240 EGP (45 GB)\nJust need your passport."
+
+  utter_out_of_scope:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "❌ آسف، أنا متخصص في السياحة في مصر. أقدر أساعدك في:\n- الآثار (الأهرامات، أبو الهول، الكرنك...)\n- الأماكن الدينية (الأزهر، الكنائس...)\n- الشواطئ (شرم، الغردقة...)\n- رحلات السفاري والنيل\n- الغوص والرياضات المائية\n- الطقس والفنادق والمطاعم\n- معلومات عملية (فيزا، مواصلات...)\nاسألني عن أي حاجة تخص السياحة في مصر 🇪🇬"
+    - text: "❌ Sorry, I specialize in Egypt tourism. I can help with:\n- Monuments (Pyramids, Sphinx, Karnak...)\n- Religious sites (Mosques, Churches...)\n- Beaches (Sharm, Hurghada...)\n- Safaris and Nile cruises\n- Diving and water sports\n- Weather, hotels, restaurants\n- Practical info (visa, transport...)\nAsk me anything about Egypt tourism 🇪🇬"
+
+  utter_please_rephrase:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "🤔 آسف، ما فهمتش بالضبط. ممكن تعيد صياغة السؤال؟"
+    - text: "🤔 Sorry, I didn't understand exactly. Could you rephrase your question?"
+
+  utter_bot_challenge:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "🤖 أنا EGYPTIA Ai، مساعدك السياحي الذكي.\n\nمبرمجي: **م محمود إبراهيم عبدالحميد**\n\nتم تطويره لمساعدتك في اكتشاف مصر السياحية!"
+    - text: "🤖 I'm EGYPTIA Ai, your smart tourism assistant.\n\nMy programmer: **Mahmoud Ibrahim Abdelhamid**\n\nDeveloped to help you discover tourism in Egypt!"
+
+actions:
+  - action_detect_language
+  - action_get_weather
+  - action_reset_slots

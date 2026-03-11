@@ -1,0 +1,14 @@
+# ==================== EGYPTIA Ai - نقاط النهاية ====================
+
+action_endpoint:
+  url: "http://localhost:5055/webhook"
+
+rest:
+  url: "http://localhost:5005"
+
+socketio:
+  user_message_evt: user_uttered
+  bot_message_evt: bot_uttered
+  session_persistence: true
+  host: 0.0.0.0
+  port: 5005

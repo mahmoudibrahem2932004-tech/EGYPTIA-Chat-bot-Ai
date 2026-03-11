@@ -1,0 +1,1180 @@
+version: "3.1"
+
+nlu:
+  # ==================== 100 نية أساسية ====================
+  - intent: greet
+    examples: |
+      - مرحبا
+      - السلام عليكم
+      - أهلاً
+      - أهلا
+      - ازيك
+      - ازيكم
+      - عامل ايه
+      - عاملين ايه
+      - اخبارك ايه
+      - اخباركم ايه
+      - صباح الخير
+      - صباح النور
+      - مساء الخير
+      - مساء النور
+      - hi
+      - hello
+      - hey
+      - good morning
+      - good afternoon
+      - good evening
+      - morning
+      - afternoon
+      - what's up
+      - how are you
+      - howdy
+      - ازايك
+      - عاملة ايه
+      - كيف حالك
+      - كيفك
+      - شلونك
+      - شخبارك
+      - هلا
+      - هلا والله
+      - هلا بيك
+      - نورت
+      - منور
+      - يا هلا
+      - يا مرحبا
+      - أهلاً وسهلاً
+
+  - intent: goodbye
+    examples: |
+      - مع السلامة
+      - إلى اللقاء
+      - سلام
+      - باي
+      - باي باي
+      - نشوفك بعدين
+      - نشوفك قريب
+      - في امان الله
+      - احنا مشينا
+      - خلاص ماشي
+      - bye
+      - goodbye
+      - see you
+      - see you later
+      - take care
+      - later
+      - catch you later
+      - bye bye
+      - peace
+      - مع السلام
+      - سلام عليكم
+      - رحت انا
+      - هروح بقى
+      - أشوفك
+      - في أمان الله
+      - الله معك
+
+  - intent: thank
+    examples: |
+      - شكراً
+      - شكرا
+      - جزاك الله خيراً
+      - تسلم
+      - تسلم ايدك
+      - متشكر
+      - ميرسي
+      - ميرس
+      - thanks
+      - thank you
+      - appreciate it
+      - thanks a lot
+      - thank you very much
+      - much appreciated
+      - many thanks
+      - thanx
+      - thx
+      - تسلملي
+      - الله يكرمك
+      - يعطيك العافية
+      - شكراً جزيلاً
+      - شكراً كثير
+      - شكراً من القلب
+      - شكراً على مجهودك
+      - شكراً على مساعدتك
+
+  - intent: ask_name
+    examples: |
+      - ما اسمك؟
+      - انت مين
+      - انت اسمك ايه
+      - مين انت
+      - اسمك ايه
+      - بتتسمى ايه
+      - what is your name
+      - who are you
+      - tell me your name
+      - what should I call you
+      - your name
+      - what's your name
+      - مين انتي
+      - اسمك
+      - من أنت
+      - من تكون
+      - ما هو اسمك
+      - اسم البرنامج إيه
+      - اسم البوت إيه
+      - عرفني بنفسك
+      - قول لي من أنت
+
+  - intent: ask_capabilities
+    examples: |
+      - تقدر تعمل ايه
+      - شو بتقدر تعمل
+      - ايه اللي بتعمله
+      - امكانياتك ايه
+      - بتفهم في ايه
+      - what can you do
+      - what are your capabilities
+      - what can you help me with
+      - your features
+      - tell me what you can do
+      - مهامك ايه
+      - انت شغال ايه
+      - دورك ايه
+      - إيه هي مهاراتك
+      - إيش تقدر
+      - شو مجالك
+      - ما هي خدماتك
+      - كيف يمكنك مساعدتي
+
+  - intent: ask_help
+    examples: |
+      - محتاج مساعدة
+      - عايز مساعدة
+      - ممكن تساعدني
+      - تقدر تساعدني
+      - help me
+      - need help
+      - can you help me
+      - help please
+      - I need assistance
+      - can you assist me
+      - عايز مساعد
+      - عاوز مساعده
+      - محتاج مساعد
+      - وقف معايا
+      - عاونني
+      - ساعدني
+      - ممكن مساعدة
+
+  - intent: mood_great
+    examples: |
+      - تمام
+      - كويس
+      - perfect
+      - great
+      - amazing
+      - ممتاز
+      - الحمد لله
+      - تمام كده
+      - انا كويس
+      - انا بخير
+      - i'm good
+      - i'm fine
+      - doing great
+      - feeling good
+      - awesome
+      - fantastic
+      - wonderful
+      - في احسن حال
+      - بخير وعافية
+      - على ما يرام
+      - مبسوط
+      - فرحان
+      - سعيد
+
+  - intent: mood_unhappy
+    examples: |
+      - مش تمام
+      - تعبان
+      - sad
+      - not good
+      - unhappy
+      - زعلان
+      - مش مبسوط
+      - انا زعلان
+      - انا تعبان
+      - i'm sad
+      - feeling bad
+      - not great
+      - terrible
+      - depressed
+      - مش عاجبني
+      - حزين
+      - متضايق
+      - نفسيتي تعبانة
+      - زهقان
+      - tired
+      - exhausted
+
+  - intent: affirm
+    examples: |
+      - نعم
+      - أيوه
+      - ok
+      - yes
+      - yeah
+      - sure
+      - تمام
+      - طيب
+      - آه
+      - اه
+      - ايوه
+      - اوكي
+      - اوك
+      - yep
+      - yeah sure
+      - yes please
+      - طبعاً
+      - بالطبع
+      - اكيد
+      - متأكد
+      - صحيح
+      - of course
+      - absolutely
+      - موافق
+      - تم
+      - ماشي
+      - حلو
+
+  - intent: deny
+    examples: |
+      - لا
+      - لأ
+      - no
+      - not
+      - never
+      - لا شكراً
+      - مش عايز
+      - مش حابب
+      - ابداً
+      - no thanks
+      - not interested
+      - لا افعل
+      - لاء
+      - نوب
+      - absolutely not
+      - certainly not
+      - of course not
+      - not at all
+      - no way
+      - not right now
+      - not today
+      - maybe later
+      - لا اقبل
+      - غير موافق
+      - ارفض
+      - كلا
+      - لا اريد
+      - مش محتاج
+      - خلاص
+      - يكفي
+
+  - intent: inform_location
+    examples: |
+      - [القاهرة](location)
+      - [الأسكندرية](location)
+      - [الجيزة](location)
+      - [الأقصر](location)
+      - [أسوان](location)
+      - [شرم الشيخ](location)
+      - [الغردقة](location)
+      - [مرسى علم](location)
+      - [دهب](location)
+      - [طابا](location)
+      - [نويبع](location)
+      - [العين السخنة](location)
+      - [الفيوم](location)
+      - [سوهاج](location)
+      - [المنيا](location)
+      - [بورسعيد](location)
+      - [السويس](location)
+      - [مطروح](location)
+      - [سيدى عبد الرحمن](location)
+      - [العلمين](location)
+      - [cairo](location)
+      - [alexandria](location)
+      - [giza](location)
+      - [luxor](location)
+      - [aswan](location)
+      - [sharm el sheikh](location)
+      - [hurghada](location)
+      - [marsa alam](location)
+      - [dahab](location)
+      - [taba](location)
+      - [nuweiba](location)
+      - [ain sokhna](location)
+      - [fayoum](location)
+      - [sohag](location)
+      - [minya](location)
+      - [port said](location)
+      - [suez](location)
+      - [matrouh](location)
+
+  # ==================== 200 نية للآثار ====================
+  - intent: ask_pyramids
+    examples: |
+      - الأهرامات
+      - اهرامات الجيزة
+      - الاهرامات
+      - الهرم
+      - اهرامات مصر
+      - هرم خوفو
+      - هرم خفرع
+      - هرم منقرع
+      - هرم
+      - اهرام
+      - الاهرام
+      - اهرامات
+      - الاهرامات فين
+      - pyramids
+      - giza pyramids
+      - great pyramid
+      - pyramid of giza
+      - pyramid of khufu
+      - egyptian pyramids
+      - الهرم الاكبر
+      - عايز اعرف عن الأهرامات
+      - معلومات عن الأهرامات
+      - ازور الاهرامات
+      - تذاكر الاهرامات
+      - سعر دخول الاهرامات
+      - مواعيد زيارة الاهرامات
+      - جولات الاهرامات
+      - ركوب الجمال في الاهرامات
+      - عروض الصوت والضوء
+      - دخول الهرم
+      - بناء الاهرامات
+      - كيف بنيت الاهرامات
+      - من بنى الاهرامات
+      - سر الاهرامات
+      - قصة الاهرامات
+      - تاريخ الاهرامات
+      - عمر الاهرامات
+      - كم عمر الاهرامات
+      - طول الهرم
+      - ارتفاع الهرم
+      - صور الاهرامات
+      - غروب الشمس خلف الاهرامات
+      - الاهرامات ليلاً
+      - أفضل وقت لزيارة الاهرامات
+      - كيف اروح الاهرامات
+      - الذهاب للاهرامات
+      - المواصلات للاهرامات
+      - المسافة من القاهرة للاهرامات
+      - فنادق قريبة من الاهرامات
+      - مطاعم قريبة من الاهرامات
+      - فندق مينا هاوس
+      - هضبة الجيزة
+      - منطقة الاهرامات
+      - مرشد سياحي في الاهرامات
+      - معلومات للسياح عن الاهرامات
+      - نصائح لزيارة الاهرامات
+      - الأمان في الاهرامات
+      - خريطة الاهرامات
+      - حقائق الاهرامات
+      - أسرار الفراعنة
+      - عجائب الدنيا السبع
+
+  - intent: ask_sphinx
+    examples: |
+      - ابو الهول
+      - تمثال ابو الهول
+      - sphinx
+      - great sphinx
+      - ابو الهول في الجيزة
+      - معلومات عن ابو الهول
+      - تمثال ابو الهول قد ايه
+      - ابو الهول منحوت ازاي
+      - sphinx statue
+      - قصة ابو الهول
+      - لغز ابو الهول
+      - زياره ابو الهول
+      - سعر تذكرة ابو الهول
+      - مواعيد زيارة ابو الهول
+
+  - intent: ask_karnak
+    examples: |
+      - معبد الكرنك
+      - الكرنك
+      - karnak temple
+      - karnak
+      - معبد الاقصر
+      - معبد الكرنك الاقصر
+      - قاعة الاعمدة في الكرنك
+      - اعمدة الكرنك
+      - تاريخ معبد الكرنك
+      - زيارة معبد الكرنك
+      - تذاكر معبد الكرنك
+      - مسلات الكرنك
+      - مسلة حتشبسوت
+      - طريق الكباش
+
+  - intent: ask_luxor_temple
+    examples: |
+      - معبد الاقصر
+      - معبد الأقصر
+      - luxor temple
+      - معبد الليل
+      - معبد الاقصر بالليل
+      - تاريخ معبد الاقصر
+      - رمسيس الثاني في معبد الاقصر
+      - زيارة معبد الاقصر
+      - تذاكر معبد الاقصر
+
+  - intent: ask_abu_simbel
+    examples: |
+      - ابو سمبل
+      - معبد ابو سمبل
+      - abu simbel
+      - رمسيس الثاني
+      - تعامد الشمس
+      - ابو سمبل اسوان
+      - تماثيل ابو سمبل
+      - ظاهرة تعامد الشمس
+      - نقل معبد ابو سمبل
+      - زيارة ابو سمبل
+      - تذاكر ابو سمبل
+      - رحلات الي ابو سمبل
+
+  - intent: ask_hatshepsut
+    examples: |
+      - حتشبسوت
+      - معبد حتشبسوت
+      - hatshepsut temple
+      - الملكة حتشبسوت
+      - الدير البحري
+      - حتشبسوت معلومات
+      - زيارة معبد حتشبسوت
+      - تذاكر معبد حتشبسوت
+
+  - intent: ask_valley_of_kings
+    examples: |
+      - وادي الملوك
+      - valley of the kings
+      - مقابر الملوك
+      - توت عنخ امون
+      - وادي الملوك الاقصر
+      - مقبرة توت عنخ امون
+      - هوارد كارتر
+      - كنوز توت عنخ امون
+      - قناع توت عنخ امون
+      - زيارة وادي الملوك
+      - تذاكر وادي الملوك
+
+  - intent: ask_egyptian_museum
+    examples: |
+      - المتحف المصري
+      - المتحف المصري بالتحرير
+      - متحف التحرير
+      - egyptian museum
+      - مومياوات
+      - المتحف القديم
+      - مومياوات مصرية
+      - كنوز توت عنخ آمون
+      - قناع توت عنخ آمون
+      - زيارة المتحف المصري
+      - تذاكر المتحف المصري
+      - مواعيد المتحف المصري
+
+  - intent: ask_grand_museum
+    examples: |
+      - المتحف المصري الكبير
+      - المتحف الكبير
+      - grand egyptian museum
+      - gem
+      - متحف الأهرامات
+      - المتحف الجديد
+      - المتحف الكبير الجيزة
+      - زيارة المتحف الكبير
+      - تذاكر المتحف الكبير
+
+  - intent: ask_saqqara
+    examples: |
+      - سقارة
+      - هرم سقارة
+      - هرم زوسر
+      - هرم سقارة المدرج
+      - مقابر سقارة
+      - اهرام سقارة
+      - اكتشافات سقارة
+      - زيارة سقارة
+      - تذاكر سقارة
+
+  - intent: ask_dahshur
+    examples: |
+      - دهشور
+      - هرم دهشور
+      - الهرم المنحني
+      - الهرم الأحمر
+      - سنفرو
+      - زيارة دهشور
+      - تذاكر دهشور
+
+  # ==================== 200 نية للأماكن الدينية ====================
+  - intent: ask_al_azhar
+    examples: |
+      - الجامع الأزهر
+      - الأزهر
+      - al azhar mosque
+      - جامع الازهر
+      - جامعة الازهر
+      - ازهر شريف
+      - تاريخ الازهر
+      - زيارة الازهر
+
+  - intent: ask_amr_ibn_alaas
+    examples: |
+      - جامع عمرو بن العاص
+      - مسجد عمرو بن العاص
+      - amr ibn al aas mosque
+      - اول مسجد في مصر
+      - مسجد عمرو بن العاص القاهرة
+      - تاريخ جامع عمرو بن العاص
+      - زيارة جامع عمرو بن العاص
+
+  - intent: ask_mohamed_ali_mosque
+    examples: |
+      - مسجد محمد علي
+      - جامع المرمر
+      - مسجد المرمر
+      - muhammad ali mosque
+      - alabaster mosque
+      - مسجد القلعة
+      - مسجد محمد علي القاهرة
+      - زيارة مسجد محمد علي
+      - تذاكر مسجد محمد علي
+
+  - intent: ask_saint_catherine
+    examples: |
+      - دير سانت كاترين
+      - سانت كاترين
+      - saint catherine monastery
+      - دير سيناء
+      - جبل موسى
+      - دير سانت كاترين سيناء
+      - زيارة سانت كاترين
+      - صعود جبل موسى
+
+  - intent: ask_hanging_church
+    examples: |
+      - الكنيسة المعلقة
+      - hanging church
+      - الكنيسة المعلقة مصر القديمة
+      - زيارة الكنيسة المعلقة
+
+  - intent: ask_sultan_hassan_mosque
+    examples: |
+      - مسجد السلطان حسن
+      - جامع السلطان حسن
+      - زيارة مسجد السلطان حسن
+
+  - intent: ask_ibn_tulun_mosque
+    examples: |
+      - مسجد ابن طولون
+      - جامع ابن طولون
+      - اقدم مساجد مصر
+      - زيارة مسجد ابن طولون
+
+  - intent: ask_abu_serga_church
+    examples: |
+      - كنيسة أبو سرجة
+      - كنيسة ابو سرجة
+      - كنيسة العائلة المقدسة
+      - مغارة العائلة المقدسة
+
+  - intent: ask_ben_ezra_synagogue
+    examples: |
+      - معبد بن عزرا
+      - كنيس بن عزرا
+      - ben ezra synagogue
+
+  - intent: ask_monastery_of_antonios
+    examples: |
+      - دير الأنبا أنطونيوس
+      - دير الانبا انطونيوس
+      - saint antony monastery
+
+  - intent: ask_monastery_of_paula
+    examples: |
+      - دير الأنبا بولا
+      - دير الانبا بولا
+      - saint paul monastery
+
+  - intent: ask_el_moiz_street
+    examples: |
+      - شارع المعز
+      - شارع المعز لدين الله
+      - القاهرة الفاطمية
+
+  # ==================== 200 نية للشواطئ ====================
+  - intent: ask_sharm_el_sheikh
+    examples: |
+      - شرم الشيخ
+      - شرم
+      - sharm el sheikh
+      - خليج نعمة
+      - راس محمد
+      - منتجعات شرم الشيخ
+      - فنادق شرم الشيخ
+      - غوص في شرم الشيخ
+      - سنوركلينج شرم الشيخ
+      - رحلات شرم الشيخ
+      - جزيرة تيران وصنافير
+      - اسعار شرم الشيخ
+      - اجازة في شرم الشيخ
+      - شرم الشيخ للعائلات
+      - أمان شرم الشيخ
+      - درجة الحرارة في شرم الشيخ
+      - الطقس في شرم الشيخ
+      - السفر لشرم الشيخ
+      - مطار شرم الشيخ
+
+  - intent: ask_hurghada
+    examples: |
+      - الغردقة
+      - hurghada
+      - الجونة
+      - سهل حشيش
+      - السقالة
+      - منتجعات الغردقة
+      - فنادق الغردقة
+      - غوص في الغردقة
+      - سنوركلينج الغردقة
+      - رحلات الغردقة
+      - جزر الجفتون
+      - اسعار الغردقة
+      - الغردقة للعائلات
+      - الطقس في الغردقة
+      - السفر للغردقة
+      - مطار الغردقة
+
+  - intent: ask_marsa_alam
+    examples: |
+      - مرسى علم
+      - marsa alam
+      - ابو دباب
+      - دولفين هاوس
+      - سباحة مع السلاحف
+      - دلافين مرسى علم
+      - فنادق مرسى علم
+      - غوص في مرسى علم
+      - وادي الجمال
+      - اسعار مرسى علم
+      - الطقس في مرسى علم
+
+  - intent: ask_dahab
+    examples: |
+      - دهب
+      - dahab
+      - بلو هول
+      - blue hole
+      - ركش في دهب
+      - غوص في دهب
+      - كمبينات دهب
+      - المشاية دهب
+      - اسعار دهب
+      - الطقس في دهب
+      - السفر لدهب
+
+  - intent: ask_north_coast
+    examples: |
+      - الساحل الشمالي
+      - north coast
+      - مارينا
+      - العلمين
+      - سيدي عبد الرحمن
+      - منتجعات الساحل الشمالي
+      - فيلات الساحل
+      - اسعار الساحل الشمالي
+      - الطقس في الساحل
+
+  - intent: ask_el_gouna
+    examples: |
+      - الجونة
+      - el gouna
+      - منتجعات الجونة
+      - فنادق الجونة
+      - قنوات الجونة
+      - اسعار الجونة
+
+  - intent: ask_taba
+    examples: |
+      - طابا
+      - taba
+      - منتجعات طابا
+      - فنادق طابا
+      - جزيرة فرعون
+
+  - intent: ask_nuweiba
+    examples: |
+      - نويبع
+      - nuweiba
+      - كمبينات نويبع
+      - شواطئ نويبع
+
+  - intent: ask_ain_sokhna
+    examples: |
+      - العين السخنة
+      - ain sokhna
+      - فنادق العين السخنة
+      - منتجعات العين السخنة
+      - عيون كبريتية
+      - اسعار العين السخنة
+
+  # ==================== 100 نية للطقس ====================
+  - intent: ask_weather
+    examples: |
+      - الطقس في [القاهرة](location)
+      - درجة الحرارة في [شرم الشيخ](location)
+      - weather in [cairo](location)
+      - temperature in [luxor](location)
+      - [الاسكندرية](location) النهاردة حر
+      - [اسوان](location) الجو عامل ايه
+      - how is the weather in [hurghada](location)
+      - [alexandria](location) weather
+      - اخبار الطقس
+      - الجو النهاردة
+      - حر ولا برد في [الجيزة](location)
+      - [الغردقة](location) النهاردة
+      - طقس [الاقصر](location) النهاردة
+      - weather forecast [aswan](location)
+      - [مطروح](location) الجو
+      - [شرم الشيخ](location) درجة الحرارة
+      - النهاردة حر
+      - الجو عامل ايه
+      - فيه مطر
+      - درجة الحرارة في [المنصورة](location)
+      - الطقس في [طنطا](location)
+      - الطقس في [بورسعيد](location)
+      - الطقس في [السويس](location)
+      - الطقس في [الفيوم](location)
+      - الطقس في [المنيا](location)
+      - الطقس في [اسيوط](location)
+      - الطقس في [سوهاج](location)
+      - الجو في [القاهرة](location) دلوقتي
+      - هل الجو حار في [الاقصر](location)
+      - نسبة الرطوبة في [القاهرة](location)
+      - توقعات الطقس بكره
+      - امطار في مصر
+      - طقس البحر الاحمر
+      - طقس البحر المتوسط
+
+  # ==================== 100 نية لمعلومات عملية ====================
+  - intent: ask_hotel_recommendation
+    examples: |
+      - اقترح لي فندق في [القاهرة](location)
+      - أفضل فنادق [الجيزة](location)
+      - hotel in [hurghada](location)
+      - recommend a hotel in [luxor](location)
+      - فنادق [شرم الشيخ](location) فخمة
+      - cheap hotels in [cairo](location)
+      - luxury hotels in [giza](location)
+      - عايز احجز فندق
+      - فين احسن فندق في [اسوان](location)
+      - منتجعات [الغردقة](location)
+      - places to stay in [alexandria](location)
+      - فنادق رخيصة في [الاقصر](location)
+      - فنادق 5 نجوم في [شرم الشيخ](location)
+      - اقامة في [مرسى علم](location)
+      - فنادق على البحر في [الغردقة](location)
+      - best hotels in [cairo](location)
+      - budget hotels [luxor](location)
+
+  - intent: ask_restaurant_recommendation
+    examples: |
+      - أفضل مطاعم في [القاهرة](location)
+      - restaurants in [cairo](location)
+      - مطاعم [الاسكندرية](location)
+      - اكل مصري فين
+      - مطاعم سمك في [الغردقة](location)
+      - seafood restaurants in [hurghada](location)
+      - مطاعم شعبية في [الاقصر](location)
+      - اين تأكل في [شرم الشيخ](location)
+      - مطاعم فخمة في [الجيزة](location)
+
+  - intent: ask_egyptian_cuisine
+    examples: |
+      - الأكل المصري
+      - اكلات مصرية
+      - egyptian food
+      - what to eat in egypt
+      - أشهر أكلات مصرية
+      - كشري
+      - فول وطعمية
+      - محشي
+      - فتة
+      - ملوخية
+      - كباب وكفتة
+      - فراخ مشوية
+      - بامية
+      - Egyptian dishes
+      - street food egypt
+      - اكل شعبي مصري
+      - طريقة عمل الكشري
+
+  - intent: ask_transportation
+    examples: |
+      - وسائل النقل في مصر
+      - كيف أذهب من [القاهرة](location) إلى [الأقصر](location)
+      - transportation in egypt
+      - how to travel between [cairo](location) and [luxor](location)
+      - المواصلات في [شرم الشيخ](location)
+      - ازاي اروح
+      - اسافر ازاي من [القاهرة](location) ل [اسوان](location)
+      - طرق السفر في مصر
+
+  - intent: ask_flights
+    examples: |
+      - طيران داخلي مصر
+      - flights between [cairo](location) and [aswan](location)
+      - EgyptAir
+      - حجز طيران داخلي
+      - عايز اسافر بالطيران
+      - طيران القاهرة [الاقصر](location)
+      - اسعار تذاكر الطيران
+
+  - intent: ask_trains
+    examples: |
+      - قطارات مصر
+      - قطار النوم
+      - trains in egypt
+      - sleeping train
+      - القاهرة [الأقصر](location) قطار
+      - حجز قطار النوم
+
+  - intent: ask_buses
+    examples: |
+      - أتوبيسات مصر
+      - buses in egypt
+      - go bus
+      - super jet
+      - حجز اتوبيس
+
+  - intent: ask_tours
+    examples: |
+      - جولات سياحية
+      - tours in egypt
+      - organized tours
+      - day tours from [cairo](location)
+      - مرشد سياحي
+
+  - intent: ask_best_time_to_visit
+    examples: |
+      - أفضل وقت لزيارة مصر
+      - امتى أزور مصر
+      - best time to visit egypt
+      - when to go to egypt
+      - احسن وقت للسفر
+      - افضل شهر لزيارة [الاقصر](location)
+
+  - intent: ask_visa_requirements
+    examples: |
+      - تأشيرة مصر
+      - فيزا مصر
+      - egypt visa
+      - visa requirements for egypt
+      - do i need visa for egypt
+      - فيزا السياحة لمصر
+
+  - intent: ask_currency
+    examples: |
+      - العملة في مصر
+      - الجنيه المصري
+      - currency in egypt
+      - egyptian pound
+      - exchange rate
+      - صرف العملات
+      - دولار مقابل جنيه
+
+  - intent: ask_language_info
+    examples: |
+      - اللغة في مصر
+      - language in egypt
+      - بيتكلموا إنجليزي في مصر
+      - do they speak english in egypt
+      - كلمات عربية مفيدة
+
+  - intent: ask_safety
+    examples: |
+      - الأمان في مصر
+      - هل مصر آمنة
+      - is egypt safe
+      - safety for tourists in egypt
+
+  - intent: ask_emergency_numbers
+    examples: |
+      - أرقام الطوارئ في مصر
+      - emergency numbers in egypt
+      - شرطة سياحة
+      - ambulance egypt
+      - رقم البوليس في مصر
+
+  - intent: ask_shopping
+    examples: |
+      - أماكن التسوق في مصر
+      - shopping in egypt
+      - اشتري إيه من مصر
+      - what to buy in egypt
+      - مولات في القاهرة
+      - souvenirs from egypt
+      - papyrus
+      - cotton egypt
+
+  - intent: ask_khan_el_khalili
+    examples: |
+      - خان الخليلي
+      - khan el khalili
+      - سوق خان الخليلي
+      - اسواق القاهرة
+
+  - intent: ask_cost_of_trip
+    examples: |
+      - تكلفة السفر لمصر
+      - cost of trip to egypt
+      - budget for egypt trip
+      - مصر travel cost
+      - الرحلة تكلف كام
+
+  - intent: ask_photography_spots
+    examples: |
+      - أماكن التصوير في مصر
+      - photography spots in egypt
+      - best places to take photos in egypt
+
+  - intent: ask_wifi_internet
+    examples: |
+      - الإنترنت في مصر
+      - الواي فاي في مصر
+      - internet in egypt
+      - wifi in egypt
+
+  - intent: ask_sim_card
+    examples: |
+      - شريحة اتصال مصر
+      - sim card in egypt
+      - اشتري شريحة بيانات
+      - mobile data egypt
+
+  # ==================== 100 نية للسفاري والمغامرات ====================
+  - intent: ask_safari_adventure
+    examples: |
+      - سفاري في مصر
+      - رحلات سفاري
+      - safari in egypt
+      - desert safari
+      - رحلات كواد
+      - رحلات صحراوية
+      - سفاري في سيناء
+      - رحلات بدوية
+      - تخييم في الصحراء
+
+  - intent: ask_white_desert
+    examples: |
+      - الصحراء البيضاء
+      - white desert
+      - رحلة الصحراء البيضاء
+      - الصحراء البيضاء الواحات
+      - تخييم في الصحراء البيضاء
+
+  - intent: ask_black_desert
+    examples: |
+      - الصحراء السوداء
+      - black desert
+      - الصحراء السوداء الواحات
+
+  - intent: ask_crystal_mountain
+    examples: |
+      - جبل الكريستال
+      - crystal mountain
+      - جبل الكريستال الصحراء البيضاء
+
+  - intent: ask_wadi_el_hitan
+    examples: |
+      - وادي الحيتان
+      - وادي الحيتان الفيوم
+      - حفريات حيتان
+
+  - intent: ask_wadi_el_rayan
+    examples: |
+      - وادي الريان
+      - شلالات وادي الريان
+      - بحيرات وادي الريان
+
+  - intent: ask_qaroun_lake
+    examples: |
+      - بحيرة قارون
+      - بحيرة قارون الفيوم
+
+  - intent: ask_wadi_el_gemal
+    examples: |
+      - وادي الجمال
+      - وادي الجمال مرسى علم
+      - محمية وادي الجمال
+
+  - intent: ask_ras_mohamed
+    examples: |
+      - رأس محمد
+      - راس محمد
+      - محمية رأس محمد
+      - الغوص في رأس محمد
+
+  - intent: ask_abu_gallum
+    examples: |
+      - أبو جالوم
+      - محمية أبو جالوم
+      - ابو جالوم نويبع
+
+  - intent: ask_colored_canyon
+    examples: |
+      - الوادي الملون
+      - colored canyon
+      - الوادي الملون سيناء
+
+  # ==================== 100 نية لرحلات النيل ====================
+  - intent: ask_nile_cruise
+    examples: |
+      - رحلات نيلية
+      - نايل كروز
+      - cruise في النيل
+      - nile cruise
+      - رحلة نيلية بين الاقصر واسوان
+      - مراكب نيلية
+      - كروز النيل اسعار
+      - حجز نايل كروز
+      - نايل كروز 4 ايام
+
+  - intent: ask_felucca
+    examples: |
+      - فلوكة
+      - ركوب الفلوكة
+      - felucca
+      - مركب شراعي في النيل
+      - رحلة غروب الشمس
+      - ركوب فلوكة في النيل
+      - سعر الفلوكة
+
+  # ==================== 100 نية للسياحة الرياضية ====================
+  - intent: ask_diving
+    examples: |
+      - الغوص في مصر
+      - diving in egypt
+      - اماكن غوص
+      - scuba diving
+      - سنوركلينج
+      - رحلات غوص
+      - diving sharm el sheikh
+      - diving hurghada
+      - diving marsa alam
+      - blue hole diving
+      - تعلم الغوص
+      - دورة غوص
+
+  - intent: ask_golf
+    examples: |
+      - جولف في مصر
+      - ملاعب جولف
+      - golf in egypt
+      - جولف الجونة
+      - جولف الساحل الشمالي
+
+  - intent: ask_kite_surfing
+    examples: |
+      - ركش
+      - kite surfing
+      - ركوب الامواج
+      - دهب ركش
+      - kite surfing dahab
+      - تعلم الركش
+
+  - intent: ask_horse_riding
+    examples: |
+      - ركوب الخيل
+      - horse riding egypt
+      - ركوب خيل الأهرامات
+
+  - intent: ask_camel_riding
+    examples: |
+      - ركوب الجمال
+      - camel riding egypt
+      - ركوب جمال الاهرامات
+
+  # ==================== 100 نية للسياحة العلاجية ====================
+  - intent: ask_medical_tourism
+    examples: |
+      - السياحة العلاجية في مصر
+      - medical tourism in egypt
+      - علاج بالرمال
+      - عيون كبريتية
+      - استشفاء في مصر
+
+  - intent: ask_siwa_medical
+    examples: |
+      - علاج في سيوة
+      - دفن في الرمال سيوة
+      - عيون سيوة الكبريتية
+      - جبل الدكرور
+
+  - intent: ask_safaga_medical
+    examples: |
+      - سفاجا علاج
+      - علاج في سفاجا
+      - رمال سوداء سفاجا
+      - psoriasis treatment safaga
+
+  - intent: ask_helwan_medical
+    examples: |
+      - حلوان علاج
+      - عيون كبريت حلوان
+      - حمامات كبريت حلوان
+
+  - intent: ask_ain_sokhna_medical
+    examples: |
+      - العين السخنة علاج
+      - عيون كبريتية السخنة
+      - ain sokhna hot springs
+
+  # ==================== خارج النطاق ====================
+  - intent: out_of_scope
+    examples: |
+      - ازاي اعمل بيتزا
+      - مين رئيس أمريكا
+      - افتح اليوتيوب
+      - tell me a joke
+      - what is the stock market
+      - how to make pizza
+      - who is the president
+      - open google
+      - حساب 2+2
+      - اضحكني
+      - قول نكتة
+      - عندك اغاني
+      - نتيجة الماتش
+      - python programming
+
+  - intent: bot_challenge
+    examples: |
+      - انت بوت
+      - انت روبوت
+      - are you a bot
+      - you are a robot
+      - هل انت انسان
+      - انت برنامج
+      - you are ai
+      - من صنعك
+      - مين مبرمجك
+      - من برمجك
+      - مين برمجك
+      - مين اللي عملك
+      - developer
+      - programmer
+      - who made you

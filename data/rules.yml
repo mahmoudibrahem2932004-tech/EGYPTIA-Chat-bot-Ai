@@ -1,0 +1,524 @@
+version: "3.1"
+
+rules:
+  - rule: Say goodbye anytime the user says goodbye
+    steps:
+      - intent: goodbye
+      - action: action_detect_language
+      - action: utter_goodbye
+
+  - rule: Respond to thank you
+    steps:
+      - intent: thank
+      - action: action_detect_language
+      - action: utter_thank
+
+  - rule: Respond to bot challenge
+    steps:
+      - intent: bot_challenge
+      - action: action_detect_language
+      - action: utter_bot_challenge
+
+  - rule: Respond to name ask
+    steps:
+      - intent: ask_name
+      - action: action_detect_language
+      - action: utter_ask_name
+
+  - rule: Respond to help request
+    steps:
+      - intent: ask_help
+      - action: action_detect_language
+      - action: utter_ask_help
+
+  - rule: Respond to capabilities request
+    steps:
+      - intent: ask_capabilities
+      - action: action_detect_language
+      - action: utter_ask_capabilities
+
+  - rule: Respond to great mood
+    steps:
+      - intent: mood_great
+      - action: action_detect_language
+      - action: utter_mood_great
+
+  - rule: Respond to unhappy mood
+    steps:
+      - intent: mood_unhappy
+      - action: action_detect_language
+      - action: utter_mood_unhappy
+
+  - rule: Respond to affirm
+    steps:
+      - intent: affirm
+      - action: action_detect_language
+      - action: utter_affirm
+
+  - rule: Respond to deny
+    steps:
+      - intent: deny
+      - action: action_detect_language
+      - action: utter_deny
+
+  - rule: Respond to weather request
+    steps:
+      - intent: ask_weather
+      - action: action_detect_language
+      - action: utter_ask_weather
+
+  - rule: Respond to weather with location
+    steps:
+      - intent: inform_location
+      - action: action_detect_language
+      - action: action_get_weather
+
+  - rule: Handle out of scope questions
+    steps:
+      - intent: out_of_scope
+      - action: action_detect_language
+      - action: utter_out_of_scope
+
+  - rule: Ask user to rephrase when they trigger fallback
+    steps:
+      - intent: nlu_fallback
+      - action: action_detect_language
+      - action: utter_please_rephrase
+
+  - rule: Respond to pyramids
+    steps:
+      - intent: ask_pyramids
+      - action: action_detect_language
+      - action: utter_ask_pyramids
+
+  - rule: Respond to sphinx
+    steps:
+      - intent: ask_sphinx
+      - action: action_detect_language
+      - action: utter_ask_sphinx
+
+  - rule: Respond to karnak
+    steps:
+      - intent: ask_karnak
+      - action: action_detect_language
+      - action: utter_ask_karnak
+
+  - rule: Respond to luxor temple
+    steps:
+      - intent: ask_luxor_temple
+      - action: action_detect_language
+      - action: utter_ask_luxor_temple
+
+  - rule: Respond to abu simbel
+    steps:
+      - intent: ask_abu_simbel
+      - action: action_detect_language
+      - action: utter_ask_abu_simbel
+
+  - rule: Respond to hatshepsut
+    steps:
+      - intent: ask_hatshepsut
+      - action: action_detect_language
+      - action: utter_ask_hatshepsut
+
+  - rule: Respond to valley of kings
+    steps:
+      - intent: ask_valley_of_kings
+      - action: action_detect_language
+      - action: utter_ask_valley_of_kings
+
+  - rule: Respond to egyptian museum
+    steps:
+      - intent: ask_egyptian_museum
+      - action: action_detect_language
+      - action: utter_ask_egyptian_museum
+
+  - rule: Respond to grand museum
+    steps:
+      - intent: ask_grand_museum
+      - action: action_detect_language
+      - action: utter_ask_grand_museum
+
+  - rule: Respond to saqqara
+    steps:
+      - intent: ask_saqqara
+      - action: action_detect_language
+      - action: utter_ask_saqqara
+
+  - rule: Respond to dahshur
+    steps:
+      - intent: ask_dahshur
+      - action: action_detect_language
+      - action: utter_ask_dahshur
+
+  - rule: Respond to al azhar
+    steps:
+      - intent: ask_al_azhar
+      - action: action_detect_language
+      - action: utter_ask_al_azhar
+
+  - rule: Respond to amr ibn alaas
+    steps:
+      - intent: ask_amr_ibn_alaas
+      - action: action_detect_language
+      - action: utter_ask_amr_ibn_alaas
+
+  - rule: Respond to mohamed ali mosque
+    steps:
+      - intent: ask_mohamed_ali_mosque
+      - action: action_detect_language
+      - action: utter_ask_mohamed_ali_mosque
+
+  - rule: Respond to saint catherine
+    steps:
+      - intent: ask_saint_catherine
+      - action: action_detect_language
+      - action: utter_ask_saint_catherine
+
+  - rule: Respond to hanging church
+    steps:
+      - intent: ask_hanging_church
+      - action: action_detect_language
+      - action: utter_ask_hanging_church
+
+  - rule: Respond to sultan hassan mosque
+    steps:
+      - intent: ask_sultan_hassan_mosque
+      - action: action_detect_language
+      - action: utter_ask_sultan_hassan_mosque
+
+  - rule: Respond to ibn tulun mosque
+    steps:
+      - intent: ask_ibn_tulun_mosque
+      - action: action_detect_language
+      - action: utter_ask_ibn_tulun_mosque
+
+  - rule: Respond to abu serga church
+    steps:
+      - intent: ask_abu_serga_church
+      - action: action_detect_language
+      - action: utter_ask_abu_serga_church
+
+  - rule: Respond to ben ezra synagogue
+    steps:
+      - intent: ask_ben_ezra_synagogue
+      - action: action_detect_language
+      - action: utter_ask_ben_ezra_synagogue
+
+  - rule: Respond to monastery of antonios
+    steps:
+      - intent: ask_monastery_of_antonios
+      - action: action_detect_language
+      - action: utter_ask_monastery_of_antonios
+
+  - rule: Respond to monastery of paula
+    steps:
+      - intent: ask_monastery_of_paula
+      - action: action_detect_language
+      - action: utter_ask_monastery_of_paula
+
+  - rule: Respond to el moiz street
+    steps:
+      - intent: ask_el_moiz_street
+      - action: action_detect_language
+      - action: utter_ask_el_moiz_street
+
+  - rule: Respond to sharm el sheikh
+    steps:
+      - intent: ask_sharm_el_sheikh
+      - action: action_detect_language
+      - action: utter_ask_sharm_el_sheikh
+
+  - rule: Respond to hurghada
+    steps:
+      - intent: ask_hurghada
+      - action: action_detect_language
+      - action: utter_ask_hurghada
+
+  - rule: Respond to marsa alam
+    steps:
+      - intent: ask_marsa_alam
+      - action: action_detect_language
+      - action: utter_ask_marsa_alam
+
+  - rule: Respond to dahab
+    steps:
+      - intent: ask_dahab
+      - action: action_detect_language
+      - action: utter_ask_dahab
+
+  - rule: Respond to north coast
+    steps:
+      - intent: ask_north_coast
+      - action: action_detect_language
+      - action: utter_ask_north_coast
+
+  - rule: Respond to el gouna
+    steps:
+      - intent: ask_el_gouna
+      - action: action_detect_language
+      - action: utter_ask_el_gouna
+
+  - rule: Respond to taba
+    steps:
+      - intent: ask_taba
+      - action: action_detect_language
+      - action: utter_ask_taba
+
+  - rule: Respond to nuweiba
+    steps:
+      - intent: ask_nuweiba
+      - action: action_detect_language
+      - action: utter_ask_nuweiba
+
+  - rule: Respond to ain sokhna
+    steps:
+      - intent: ask_ain_sokhna
+      - action: action_detect_language
+      - action: utter_ask_ain_sokhna
+
+  - rule: Respond to safari adventure
+    steps:
+      - intent: ask_safari_adventure
+      - action: action_detect_language
+      - action: utter_ask_safari_adventure
+
+  - rule: Respond to white desert
+    steps:
+      - intent: ask_white_desert
+      - action: action_detect_language
+      - action: utter_ask_white_desert
+
+  - rule: Respond to black desert
+    steps:
+      - intent: ask_black_desert
+      - action: action_detect_language
+      - action: utter_ask_black_desert
+
+  - rule: Respond to crystal mountain
+    steps:
+      - intent: ask_crystal_mountain
+      - action: action_detect_language
+      - action: utter_ask_crystal_mountain
+
+  - rule: Respond to wadi el hitan
+    steps:
+      - intent: ask_wadi_el_hitan
+      - action: action_detect_language
+      - action: utter_ask_wadi_el_hitan
+
+  - rule: Respond to wadi el rayan
+    steps:
+      - intent: ask_wadi_el_rayan
+      - action: action_detect_language
+      - action: utter_ask_wadi_el_rayan
+
+  - rule: Respond to qaroun lake
+    steps:
+      - intent: ask_qaroun_lake
+      - action: action_detect_language
+      - action: utter_ask_qaroun_lake
+
+  - rule: Respond to wadi el gemal
+    steps:
+      - intent: ask_wadi_el_gemal
+      - action: action_detect_language
+      - action: utter_ask_wadi_el_gemal
+
+  - rule: Respond to ras mohamed
+    steps:
+      - intent: ask_ras_mohamed
+      - action: action_detect_language
+      - action: utter_ask_ras_mohamed
+
+  - rule: Respond to abu gallum
+    steps:
+      - intent: ask_abu_gallum
+      - action: action_detect_language
+      - action: utter_ask_abu_gallum
+
+  - rule: Respond to colored canyon
+    steps:
+      - intent: ask_colored_canyon
+      - action: action_detect_language
+      - action: utter_ask_colored_canyon
+
+  - rule: Respond to nile cruise
+    steps:
+      - intent: ask_nile_cruise
+      - action: action_detect_language
+      - action: utter_ask_nile_cruise
+
+  - rule: Respond to felucca
+    steps:
+      - intent: ask_felucca
+      - action: action_detect_language
+      - action: utter_ask_felucca
+
+  - rule: Respond to diving
+    steps:
+      - intent: ask_diving
+      - action: action_detect_language
+      - action: utter_ask_diving
+
+  - rule: Respond to golf
+    steps:
+      - intent: ask_golf
+      - action: action_detect_language
+      - action: utter_ask_golf
+
+  - rule: Respond to kite surfing
+    steps:
+      - intent: ask_kite_surfing
+      - action: action_detect_language
+      - action: utter_ask_kite_surfing
+
+  - rule: Respond to horse riding
+    steps:
+      - intent: ask_horse_riding
+      - action: action_detect_language
+      - action: utter_ask_horse_riding
+
+  - rule: Respond to camel riding
+    steps:
+      - intent: ask_camel_riding
+      - action: action_detect_language
+      - action: utter_ask_camel_riding
+
+  - rule: Respond to medical tourism
+    steps:
+      - intent: ask_medical_tourism
+      - action: action_detect_language
+      - action: utter_ask_medical_tourism
+
+  - rule: Respond to siwa medical
+    steps:
+      - intent: ask_siwa_medical
+      - action: action_detect_language
+      - action: utter_ask_siwa_medical
+
+  - rule: Respond to safaga medical
+    steps:
+      - intent: ask_safaga_medical
+      - action: action_detect_language
+      - action: utter_ask_safaga_medical
+
+  - rule: Respond to helwan medical
+    steps:
+      - intent: ask_helwan_medical
+      - action: action_detect_language
+      - action: utter_ask_helwan_medical
+
+  - rule: Respond to ain sokhna medical
+    steps:
+      - intent: ask_ain_sokhna_medical
+      - action: action_detect_language
+      - action: utter_ask_ain_sokhna_medical
+
+  - rule: Respond to egyptian cuisine
+    steps:
+      - intent: ask_egyptian_cuisine
+      - action: action_detect_language
+      - action: utter_ask_egyptian_cuisine
+
+  - rule: Respond to transportation
+    steps:
+      - intent: ask_transportation
+      - action: action_detect_language
+      - action: utter_ask_transportation
+
+  - rule: Respond to flights
+    steps:
+      - intent: ask_flights
+      - action: action_detect_language
+      - action: utter_ask_flights
+
+  - rule: Respond to trains
+    steps:
+      - intent: ask_trains
+      - action: action_detect_language
+      - action: utter_ask_trains
+
+  - rule: Respond to buses
+    steps:
+      - intent: ask_buses
+      - action: action_detect_language
+      - action: utter_ask_buses
+
+  - rule: Respond to tours
+    steps:
+      - intent: ask_tours
+      - action: action_detect_language
+      - action: utter_ask_tours
+
+  - rule: Respond to best time to visit
+    steps:
+      - intent: ask_best_time_to_visit
+      - action: action_detect_language
+      - action: utter_ask_best_time_to_visit
+
+  - rule: Respond to visa requirements
+    steps:
+      - intent: ask_visa_requirements
+      - action: action_detect_language
+      - action: utter_ask_visa_requirements
+
+  - rule: Respond to currency
+    steps:
+      - intent: ask_currency
+      - action: action_detect_language
+      - action: utter_ask_currency
+
+  - rule: Respond to language info
+    steps:
+      - intent: ask_language_info
+      - action: action_detect_language
+      - action: utter_ask_language_info
+
+  - rule: Respond to safety
+    steps:
+      - intent: ask_safety
+      - action: action_detect_language
+      - action: utter_ask_safety
+
+  - rule: Respond to emergency numbers
+    steps:
+      - intent: ask_emergency_numbers
+      - action: action_detect_language
+      - action: utter_ask_emergency_numbers
+
+  - rule: Respond to shopping
+    steps:
+      - intent: ask_shopping
+      - action: action_detect_language
+      - action: utter_ask_shopping
+
+  - rule: Respond to khan el khalili
+    steps:
+      - intent: ask_khan_el_khalili
+      - action: action_detect_language
+      - action: utter_ask_khan_el_khalili
+
+  - rule: Respond to cost of trip
+    steps:
+      - intent: ask_cost_of_trip
+      - action: action_detect_language
+      - action: utter_ask_cost_of_trip
+
+  - rule: Respond to photography spots
+    steps:
+      - intent: ask_photography_spots
+      - action: action_detect_language
+      - action: utter_ask_photography_spots
+
+  - rule: Respond to wifi internet
+    steps:
+      - intent: ask_wifi_internet
+      - action: action_detect_language
+      - action: utter_ask_wifi_internet
+
+  - rule: Respond to sim card
+    steps:
+      - intent: ask_sim_card
+      - action: action_detect_language
+      - action: utter_ask_sim_card
