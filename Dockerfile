@@ -14,4 +14,4 @@ EXPOSE 7860
 EXPOSE 5005
 EXPOSE 5055
 
-CMD ["./start.sh"]
+CMD ["/bin/bash", "-c", "./start.sh"]
