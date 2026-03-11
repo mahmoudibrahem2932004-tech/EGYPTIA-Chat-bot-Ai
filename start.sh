@@ -15,7 +15,7 @@ rasa run actions --port 5055 &
 sleep 5
 
 echo "🚀 Starting Rasa server on port 5005..."
-rasa run --enable-api --cors "*" -p 5005 &
+rasa run --enable-api --cors "*" --p 5005 &
 sleep 10
 
 echo "🚀 Starting HTTP server for HTML interface on port 7860..."
