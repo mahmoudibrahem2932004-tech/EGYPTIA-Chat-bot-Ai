@@ -16,11 +16,10 @@ Thumbs.db
 # Rasa cache
 .rasa/cache/
 
-# Model files
-models/*.tar.gz
-models/*.zip
-models/*.h5
-models/*.pth
+
+
+
+
 
 # Large data files
 *.data-*
